@@ -28,6 +28,9 @@ const MIN_WORD = 3;
 export const LOGOS = {
   SOLANA:
     'https://raw.githubusercontent.com/trustwallet/assets/master/blockchains/solana/info/logo.png',
+  MIRALAND:
+    // 'https://github.com/miraland-labs/qtware/blob/main/src/images/logo.png',
+    'https://www.arcaps.com/shared/qtware/logo.png',
   NEAR: 'https://raw.githubusercontent.com/trustwallet/assets/master/blockchains/near/info/logo.png',
   ETHEREUM:
     'https://raw.githubusercontent.com/trustwallet/assets/master/blockchains/ethereum/info/logo.png',
@@ -61,12 +64,12 @@ export const recoverDerivedAccount = async (
 };
 
 //export const getChains = () => Object.keys(chains);
-export const getChains = () => ['SOLANA'];
+// export const getChains = () => ['MIRALAND', 'SOLANA'];
+export const getChains = () => ['MIRALAND'];
 
-export const getDefaultChain = () => 'SOLANA';
+export const getDefaultChain = () => 'MIRALAND';
 
-// export const getDefaultEndpoint = chain => ENDPOINTS[chain].MAIN;
-export const getDefaultEndpoint = chain => ENDPOINTS[chain].MAINSLRT;
+export const getDefaultEndpoint = chain => ENDPOINTS[chain].MAIN;
 
 export const validateSeedPhrase = seedPhrase =>
   seedPhrase.length &&

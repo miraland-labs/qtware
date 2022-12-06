@@ -390,7 +390,7 @@ const TokenSendPage = ({ params, t }) => {
                     </GlobalText>
 
                     <GlobalText type="body2">
-                      {fee / TOKEN_DECIMALS.SOLANA} SOL
+                      {fee / TOKEN_DECIMALS.MIRALAND} MLN
                     </GlobalText>
                   </View>
                 )}

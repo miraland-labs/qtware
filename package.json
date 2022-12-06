@@ -1,6 +1,6 @@
 {
   "name": "qtware",
-  "version": "0.0.0-alpha-1",
+  "version": "0.0.1-rc.1",
   "description": "Derived from and credit to Salmon wallet",
   "author": "",
   "contributors": [
@@ -11,7 +11,7 @@
     {
       "name": "Miraland Labs",
       "email": "miraland.labs@gmail.com",
-      "url": "https://arcaps.com/"
+      "url": "https://miraland.top/"
     }
   ],
   "license": "(MIT OR Apache-2.0)",
@@ -41,7 +41,7 @@
     "patch-package": "^6.4.7",
     "process": "^0.11.10",
     "qrcode.react": "^3.1.0",
-    "qtw-wallet-adapter": "^0.0.6-rc.17",
+    "qtw-wallet-adapter": "^0.0.6-rc.50",
     "react": "18.1.0",
     "react-content-loader": "^6.2.0",
     "react-dom": "^18.2.0",
@@ -99,7 +99,7 @@
     "url": "^0.11.0"
   },
   "scripts": {
-    "start:web": "PORT=3001 react-scripts start",
+    "start:web": "PORT=3000 react-scripts start",
     "build": "react-scripts build",
     "build:extension:clean": "rm -rf build-extension && rm -rf build-extension-mozilla",
     "build:extension": "npm run build:extension:clean && BUILD_PATH=./build-extension REACT_APP_IS_EXTENSION=true GENERATE_SOURCEMAP=false react-scripts build && npm run build:extension-scripts && cp -R ./build-extension ./build-extension-mozilla && mv ./build-extension-mozilla/manifest.mozilla.json ./build-extension-mozilla/manifest.json",

@@ -67,7 +67,7 @@ const AdapterDetail = () => {
     useContext(AppContext);
   const origin = useMemo(() => context.get('origin'), [context]);
   const endpoint = useMemo(
-    () => context.get('network') || getDefaultEndpoint('SOLANA'),
+    () => context.get('network') || getDefaultEndpoint('MIRALAND'),
     [context],
   );
 

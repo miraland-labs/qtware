@@ -149,7 +149,7 @@ const SelectChain = ({ onNext, blockChains, onBack, t, onComingSoon }) => (
         touchableStyles={styles.touchable}
       />
     ))}
-    <CardButton
+    {/* <CardButton
       key={'NEAR'}
       onPress={() => onComingSoon('NEAR')}
       icon={
@@ -159,6 +159,18 @@ const SelectChain = ({ onNext, blockChains, onBack, t, onComingSoon }) => (
       }
       title={'NEAR'}
       description={'coming soon'}
+      touchableStyles={styles.touchable}
+    /> */}
+    <CardButton
+      key={'SOLANA'}
+      onPress={() => onComingSoon('SOLANA')}
+      icon={
+        <View style={styles.disabledAvatar}>
+          <AvatarImage url={LOGOS.SOLANA} size={48} />
+        </View>
+      }
+      title={'SOLANA'}
+      description={'Coming soon'}
       touchableStyles={styles.touchable}
     />
     <CardButton
@@ -170,7 +182,7 @@ const SelectChain = ({ onNext, blockChains, onBack, t, onComingSoon }) => (
         </View>
       }
       title={'ETHEREUM'}
-      description={'coming soon'}
+      description={'Coming soon'}
       touchableStyles={styles.touchable}
     />
   </GlobalLayout.Header>

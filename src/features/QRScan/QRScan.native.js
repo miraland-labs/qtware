@@ -13,7 +13,7 @@ const QRScan = ({
   onClose,
   onRead,
   title = 'Scan QR Code',
-  chain = 'SOLANA',
+  chain = 'MIRALAND',
 }) => (
   <Modal animationType="slide" onRequestClose={onClose} visible={active}>
     <QRCodeScanner

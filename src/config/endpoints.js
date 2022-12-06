@@ -4,9 +4,26 @@ const ENDPOINTS = {
     TEST: 'testnet',
     DEV: 'devnet',
     // SYNDICA: 'syndica',
-    DEVSLRT: 'devnet-slrt', // m17
-    TESTSLRT: 'testnet-slrt', // m17
-    MAINSLRT: 'mainnet-slrt', // m17
+  },
+  SOLARTI: {
+    MAIN: 'mainnet-slrt',
+    TEST: 'testnet-slrt',
+    DEV: 'devnet-slrt',
+  },
+  QTHOR: {
+    MAIN: 'mainnet-qth',
+    TEST: 'testnet-qth',
+    DEV: 'devnet-qth',
+  },
+  MIRA: {
+    MAIN: 'mainnet-mira',
+    TEST: 'testnet-mira',
+    DEV: 'devnet-mira',
+  },
+  MIRALAND: {
+    MAIN: 'mainnet-mln',
+    TEST: 'testnet-mln',
+    DEV: 'devnet-mln',
   },
   NEAR: {
     MAIN: 'mainnet',

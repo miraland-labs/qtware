@@ -11,7 +11,7 @@ import GlobalPadding from '../../../component-library/Global/GlobalPadding';
 
 const AdapterSelect = ({ t }) => {
   const navigate = useNavigation();
-  const chainCode = 'SOLANA';
+  const chainCode = 'MIRALAND';
 
   return (
     <GlobalLayout fullscreen>

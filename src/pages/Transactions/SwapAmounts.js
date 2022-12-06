@@ -9,19 +9,19 @@ const SwapAmounts = ({ inAmount, outAmount, inToken, outToken }) => {
         {inAmount &&
           `-${
             inAmount /
-            (inToken === 'SOL' || !inToken
-              ? TOKEN_DECIMALS.SOLANA
+            (inToken === 'MLN' || !inToken
+              ? TOKEN_DECIMALS.MIRALAND
               : TOKEN_DECIMALS.COINS)
-          } ${inToken || 'SOL'} `}
+          } ${inToken || 'MLN'} `}
       </GlobalText>
       <GlobalText type="headline3" center>
         {outAmount &&
           `+${
             outAmount /
-            (outToken === 'SOL' || !outToken
-              ? TOKEN_DECIMALS.SOLANA
+            (outToken === 'MLN' || !outToken
+              ? TOKEN_DECIMALS.MIRALAND
               : TOKEN_DECIMALS.COINS)
-          } ${outToken || 'SOL'} `}
+          } ${outToken || 'MLN'} `}
       </GlobalText>
     </>
   );

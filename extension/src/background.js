@@ -35,7 +35,10 @@ const getConnection = (origin, { wallets, active }) => {
     return null;
   }  
   const wallet = json.wallets[active];
-  if (wallet.chain !== 'SOLANA' && wallet.chain !== 'SOLARTI' && wallet.chain !== 'MIRA') { // m17, add solarti, mira
+  if (wallet.chain !== 'SOLANA' && 
+      wallet.chain !== 'SOLARTI' && 
+      wallet.chain !== 'MIRA' && 
+      wallet.chain !== 'MIRALAND') { // m17, add solarti, mira and miraland
     return null;
   }
   const { address } = wallet;

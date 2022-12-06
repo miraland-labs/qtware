@@ -8,6 +8,7 @@ import {
   TYPES_MAP,
   TOKEN_DECIMALS,
   SOL_ICON,
+  MLN_ICON,
 } from './constants';
 import { cache, CACHE_TYPES } from '../../utils/cache';
 import { LOGOS } from '../../utils/wallet';
@@ -82,7 +83,7 @@ const TransactionsListComponent = ({ t }) => {
                     transaction.transferLogoIn ||
                     transaction.transferLogoOut ||
                     transaction.nftAmount ||
-                    (!transaction.error && SOL_ICON)
+                    (!transaction.error && MLN_ICON)
                   }
                   title={isCreate && TYPES_MAP[transaction.type]}
                   address={
@@ -99,8 +100,8 @@ const TransactionsListComponent = ({ t }) => {
                                 type="body1"
                                 color="negativeLight">
                                 {`${'-'}${
-                                  transaction.fee / TOKEN_DECIMALS.SOLANA
-                                } SOL  `}
+                                  transaction.fee / TOKEN_DECIMALS.MIRALAND
+                                } MLN  `}
                               </GlobalText>
                             )}
                             <GlobalImage source={IconFailed} size="xxs" />
@@ -162,7 +163,7 @@ const TransactionsListComponent = ({ t }) => {
                                 {isReceive ? '+' : '-'}
                                 {transaction.amount ||
                                   transaction.transferAmount}
-                                {` SOL  `}
+                                {` MLN  `}
                               </GlobalText>
                             )}
                           </View>,
@@ -195,8 +196,8 @@ const TransactionsListComponent = ({ t }) => {
                               type="body1"
                               color="negativeLight">
                               {`${'-'}${
-                                transaction.fee / TOKEN_DECIMALS.SOLANA
-                              } SOL  `}
+                                transaction.fee / TOKEN_DECIMALS.MIRALAND
+                              } MLN  `}
                             </GlobalText>
                             <GlobalImage source={IconFailed} size="xxs" />
                           </View>,
@@ -210,11 +211,11 @@ const TransactionsListComponent = ({ t }) => {
                               color="positive">
                               {`+${
                                 transaction.swapAmountIn /
-                                (transaction.tokenNameIn === 'SOL' ||
+                                (transaction.tokenNameIn === 'MLN' ||
                                 !transaction.tokenNameIn
-                                  ? TOKEN_DECIMALS.SOLANA
+                                  ? TOKEN_DECIMALS.MIRALAND
                                   : TOKEN_DECIMALS.COINS)
-                              } ${transaction.tokenNameIn || 'SOL'} `}
+                              } ${transaction.tokenNameIn || 'MLN'} `}
                             </GlobalText>
                           </View>,
                           <View style={styles.inline}>
@@ -226,11 +227,11 @@ const TransactionsListComponent = ({ t }) => {
                                   color="negativeLight">
                                   {`-${
                                     transaction.swapAmountOut /
-                                    (transaction.tokenNameOut === 'SOL' ||
+                                    (transaction.tokenNameOut === 'MLN' ||
                                     !transaction.tokenNameOut
-                                      ? TOKEN_DECIMALS.SOLANA
+                                      ? TOKEN_DECIMALS.MIRALAND
                                       : TOKEN_DECIMALS.COINS)
-                                  } ${transaction.tokenNameOut || 'SOL'} `}
+                                  } ${transaction.tokenNameOut || 'MLN'} `}
                                 </GlobalText>
                               </>
                             )}

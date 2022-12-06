@@ -13,7 +13,7 @@ import {
   TRANSACTION_STATUS,
 } from '../../utils/wallet';
 import { getMediaRemoteUrl } from '../../utils/media';
-import { TOKEN_DECIMALS, SOL_ICON } from '../Transactions/constants';
+import { TOKEN_DECIMALS, SOL_ICON, MLN_ICON } from '../Transactions/constants';
 
 import theme, { globalStyles } from '../../component-library/Global/theme';
 import GlobalLayout from '../../component-library/Global/GlobalLayout';
@@ -221,8 +221,8 @@ const NftsListingPage = ({ params, t }) => {
                 <CardButton
                   type="secondary"
                   size="sm"
-                  title="SOL"
-                  image={SOL_ICON}
+                  title="MLN"
+                  image={MLN_ICON}
                   imageSize="xs"
                   onPress={() => {}}
                   buttonStyle={{ paddingRight: 6, paddingLeft: 6 }}
@@ -365,7 +365,7 @@ const NftsListingPage = ({ params, t }) => {
                       { paddingBottom: 0, marginBottom: 0 },
                     ]}>
                     <GlobalText type="body1" nospace>
-                      {price} SOL
+                      {price} MLN
                     </GlobalText>
                   </View>
                   <GlobalText
@@ -432,7 +432,7 @@ const NftsListingPage = ({ params, t }) => {
                     {t('adapter.detail.transaction.fee')}
                   </GlobalText>
                   <GlobalText type="body2">
-                    {fee / TOKEN_DECIMALS.SOLANA} SOL
+                    {fee / TOKEN_DECIMALS.MIRALAND} MLN
                   </GlobalText>
                 </View>
               )}

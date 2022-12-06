@@ -59,6 +59,7 @@ const WalletOverviewPage = ({ t }) => {
           () => activeWallet.getAllNftsGrouped(),
         ),
       ]).then(async ([balance, nfts]) => {
+        // console.log('WalletOverviewPage::cache::balance: ', balance);
         setTotalBalance(balance);
         setTokenList(getListedTokens(balance));
         setNonListedTokenList(getNonListedTokens(balance, nfts));

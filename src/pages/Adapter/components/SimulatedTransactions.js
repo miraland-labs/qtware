@@ -135,7 +135,7 @@ const SimulatedTransactions = ({
               {t('adapter.detail.transaction.fee')}
             </GlobalText>
             <GlobalText>
-              {fee != null ? `${formatNumber(fee, 9)} SOL` : '?'}
+              {fee != null ? `${formatNumber(fee, 9)} MLN` : '?'}
             </GlobalText>
           </View>
         </BasicCard>

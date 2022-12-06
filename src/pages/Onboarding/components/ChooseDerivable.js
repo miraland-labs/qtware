@@ -53,12 +53,14 @@ const ChooseDerivable = ({ accounts, balances, onComplete, goToWallet, t }) => {
       setSelected([...selected.filter(s => s !== index)]);
     }
   };
+
+  // m17: vanilla: "m/44'/501'/0'"
   return (
     <GlobalBackgroundImage>
       <View style={styles.titleStyle}>
         <GlobalBackTitle
           title={t('wallet.create.derivable_accounts')}
-          tertiaryTitle="m/44'/501'/0'"
+          tertiaryTitle="m/44'/2002'/0'"
           nospace
         />
       </View>
@@ -75,7 +77,7 @@ const ChooseDerivable = ({ accounts, balances, onComplete, goToWallet, t }) => {
               }
               actions={
                 <GlobalText type="body2">
-                  {balances[publicKey.toString()]?.amount ?? 0} SOL
+                  {balances[publicKey.toString()]?.amount ?? 0} MLN
                 </GlobalText>
               }
               onPress={() => updateSelected(index, !selected.includes(index))}

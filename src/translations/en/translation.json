@@ -50,6 +50,7 @@
     "confirm_anyway": "Yes, confirm"
   },
   "settings": {
+    "app_version": "Version: 0.1.0",
     "title": "Settings",
     "address_book": "Address Book",
     "display_language": "Display Language",
@@ -104,8 +105,8 @@
     },
     "receive": {
       "title": "Receive",
-      "solana_warning": "This address is for receive SOL and SPL tokens only on Solarti",
-      "warning": "This address is for receive SOL and SPL tokens only on Solarti"
+      "solana_warning": "This address is for receive MLN and SPL tokens only on Solarti",
+      "warning": "This address is for receive MLN and SPL tokens only on Solarti"
     },
     "send": {
       "address": {
@@ -138,7 +139,11 @@
     "placeholder": "Enter your password",
     "error": "Invalid Password",
     "buttonChecking": "Checking...",
-    "buttonUnlock": "Unlock"
+    "buttonUnlock": "Unlock",
+    "forgot": "Oops, I forgot",
+    "forgotten": "Password Forgotten",
+    "forgot_content": "It's really a pity.\nI cannot remember my pasword.",
+    "clear_confirm": "I Confirm to Clear the Password"
   },
   "wallet": {
     "my_tokens": "My Tokens",
@@ -186,7 +191,8 @@
     "recover": {
       "messageTitle": "Recover Existing Wallet",
       "messageBody": "Recover your wallet using your 12/24 words secret phrase.",
-      "pasteSeed": "Paste your secret phrase"
+      "pasteSeed": "Paste your secret phrase",
+      "i_accept_terms_conditions": "By tapping the Recover Wallet button \nI accept the Terms & Conditions"
     },
     "onboarding": {
       "titleOnboarded": "Add New Wallet",
@@ -247,6 +253,7 @@
     "your_transactions": "Your Transactions",
     "recent_activity": "Recent Activity",
     "transaction_detail": "Transaction Detail",
+    "detail_back": "Go Back",
     "view_transaction": "View Transaction",
     "today": "Today",
     "yesterday": "Yesterday",

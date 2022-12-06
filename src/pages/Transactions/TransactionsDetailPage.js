@@ -168,7 +168,7 @@ const TransactionsDetailPage = ({ t, params }) => {
                 : transactionDetail.nftAmount?.media ||
                   transactionDetail.transferLogoIn ||
                   transactionDetail.transferLogoOut ||
-                  LOGOS.SOLANA,
+                  LOGOS.MIRALAND,
             )}
             size="xxl"
             style={styles.bigImage}
@@ -215,9 +215,9 @@ const TransactionsDetailPage = ({ t, params }) => {
                     ? transactionDetail.amount
                     : parseFloat(
                         transactionDetail.amount +
-                          transactionDetail.fee / TOKEN_DECIMALS.SOLANA,
+                          transactionDetail.fee / TOKEN_DECIMALS.MIRALAND,
                       ).toFixed(8)
-                } SOL`}
+                } MLN`}
             </GlobalText>
           )
         )}
@@ -310,7 +310,7 @@ const TransactionsDetailPage = ({ t, params }) => {
           </GlobalText>
 
           <GlobalText type="body2">
-            {`${transactionDetail.fee / TOKEN_DECIMALS.SOLANA} SOL  `}
+            {`${transactionDetail.fee / TOKEN_DECIMALS.MIRALAND} MLN  `}
           </GlobalText>
         </View>
 
@@ -358,7 +358,7 @@ const TransactionsDetailPage = ({ t, params }) => {
                 : transactionDetail.nftAmount?.media ||
                   transactionDetail.transferLogoIn ||
                   transactionDetail.transferLogoOut ||
-                  LOGOS.SOLANA,
+                  LOGOS.MIRALAND,
             )}
             size="xxl"
             style={styles.bigImage}
@@ -405,9 +405,9 @@ const TransactionsDetailPage = ({ t, params }) => {
                     ? transactionDetail.amount
                     : parseFloat(
                         transactionDetail.amount +
-                          transactionDetail.fee / TOKEN_DECIMALS.SOLANA,
+                          transactionDetail.fee / TOKEN_DECIMALS.MIRALAND,
                       ).toFixed(8)
-                } SOL`}
+                } MLN`}
             </GlobalText>
           )
         )}
@@ -486,7 +486,7 @@ const TransactionsDetailPage = ({ t, params }) => {
           </GlobalText>
 
           <GlobalText type="body2">
-            {`${transactionDetail.fee / TOKEN_DECIMALS.SOLANA} SOL  `}
+            {`${transactionDetail.fee / TOKEN_DECIMALS.MIRALAND} MLN  `}
           </GlobalText>
         </View>
 
@@ -537,7 +537,7 @@ const TransactionsDetailPage = ({ t, params }) => {
         ) : (
           <>
             <GlobalImage
-              source={transactionDetail.tokenLogoOut || LOGOS.SOLANA}
+              source={transactionDetail.tokenLogoOut || LOGOS.MIRALAND}
               size="xl"
               style={styles.bigImage}
               circle
@@ -548,7 +548,7 @@ const TransactionsDetailPage = ({ t, params }) => {
               style={styles.floatingSwap}
             />
             <GlobalImage
-              source={transactionDetail.tokenLogoIn || LOGOS.SOLANA}
+              source={transactionDetail.tokenLogoIn || LOGOS.MIRALAND}
               size="xl"
               style={styles.bigImage}
               circle
@@ -624,7 +624,7 @@ const TransactionsDetailPage = ({ t, params }) => {
         </GlobalText>
 
         <GlobalText type="body2">
-          {`${transactionDetail.fee / TOKEN_DECIMALS.SOLANA} SOL  `}
+          {`${transactionDetail.fee / TOKEN_DECIMALS.MIRALAND} MLN  `}
         </GlobalText>
       </View>
 

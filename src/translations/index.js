@@ -4,7 +4,9 @@ import enTranslation from './en/translation';
 import esTranslation from './es/translation';
 import zhTranslation from './zh/translation';
 
-export const LANGUAGES = ['en', 'es', 'zh'];
+// m17
+// export const LANGUAGES = ['en', 'es', 'zh'];
+export const LANGUAGES = ['en', 'zh'];
 
 export const resources = {
   en: {

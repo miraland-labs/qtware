@@ -14,7 +14,7 @@ import { getDefaultRouteKey, getRoutesWithParent } from '../../routes/utils';
 export const ROUTES_MAP = {
   WALLET_OVERVIEW: 'WALLET_OVERVIEW',
   WALLET_NFTS: 'WALLET_NFTS',
-  WALLET_SWAP: 'WALLET_SWAP',
+  // WALLET_SWAP: 'WALLET_SWAP',
   WALLET_TRANSACTIONS: 'WALLET_TRANSACTIONS',
   WALLET_SETTINGS: 'WALLET_SETTINGS',
 };
@@ -42,15 +42,15 @@ const routes = [
     default: false,
     icon: IconNFT,
   },
-  {
-    key: ROUTES_MAP.WALLET_SWAP,
-    name: 'Swap',
-    path: 'swap',
-    route: '/wallet/swap',
-    Component: SwapPage,
-    default: false,
-    icon: IconSwap,
-  },
+  // {
+  //   key: ROUTES_MAP.WALLET_SWAP,
+  //   name: 'Swap',
+  //   path: 'swap',
+  //   route: '/wallet/swap',
+  //   Component: SwapPage,
+  //   default: false,
+  //   icon: IconSwap,
+  // },
   {
     key: ROUTES_MAP.WALLET_TRANSACTIONS,
     name: 'Transactions',

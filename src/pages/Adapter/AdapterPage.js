@@ -1,15 +1,17 @@
 import React, { useContext, useEffect, useState } from 'react';
-import { SOLANA } from 'qtw-wallet-adapter/constants/chains';
+import { MIRALAND } from 'qtw-wallet-adapter/constants/chains';
 import { AppContext } from '../../AppProvider';
 import AdapterSelect from './components/AdapterSelect';
 import AdapterDetail from './components/AdapterDetail';
 
 const AdapterPage = () => {
   const [{ activeWallet }] = useContext(AppContext);
-  const [step, setStep] = useState(activeWallet?.getChain() === SOLANA ? 2 : 1);
+  const [step, setStep] = useState(
+    activeWallet?.getChain() === MIRALAND ? 2 : 1,
+  );
 
   useEffect(() => {
-    if (activeWallet?.getChain() === SOLANA) {
+    if (activeWallet?.getChain() === MIRALAND) {
       setStep(2);
     }
   }, [activeWallet]);

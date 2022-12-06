@@ -103,8 +103,8 @@
     },
     "receive": {
       "title": "Receive",
-      "solana_warning": "This address is for receive SOL and SPL tokens only on Solarti",
-      "warning": "This address is for receive SOL and SPL tokens only on Solarti"
+      "solana_warning": "This address is for receive MLN and SPL tokens only on Solarti",
+      "warning": "This address is for receive MLN and SPL tokens only on Solarti"
     },
     "send": {
       "address": {

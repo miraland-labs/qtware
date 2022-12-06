@@ -501,7 +501,7 @@ const SwapPage = ({ t }) => {
               <DetailItem
                 key={quote?.fee}
                 title={t('swap.total_fee')}
-                value={`${quote.fee.toFixed(8)} SOL`}
+                value={`${quote.fee.toFixed(8)} MLN`}
               />
             )}
           </GlobalLayout.Header>

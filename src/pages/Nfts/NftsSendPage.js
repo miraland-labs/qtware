@@ -344,7 +344,7 @@ const NftsSendPage = ({ params, t }) => {
                     Network Fee
                   </GlobalText>
                   <GlobalText type="body2">
-                    {fee / TOKEN_DECIMALS.SOLANA} SOL
+                    {fee / TOKEN_DECIMALS.MIRALAND} MLN
                   </GlobalText>
                 </View>
               )}

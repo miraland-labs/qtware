@@ -3494,6 +3494,27 @@
     rpc-websockets "^7.5.0"
     superstruct "^0.14.2"
 
+"@solarti/web3.js@^0.1.5-rc.1":
+  version "0.1.5-rc.1"
+  resolved "https://registry.yarnpkg.com/@solarti/web3.js/-/web3.js-0.1.5-rc.1.tgz#a12ce58bd8b0626ce063393009ec328b099fa1d3"
+  integrity sha512-wssELhJ+yKqoRMCvZ/94sbf5eCiJvWcCUb0VgaNw7qCSo9WNR8OVVyUMwn8b8cDU7DhSofQwAF/4faiB/tXlHg==
+  dependencies:
+    "@babel/runtime" "^7.12.5"
+    "@noble/ed25519" "^1.7.0"
+    "@noble/hashes" "^1.1.2"
+    "@noble/secp256k1" "^1.6.3"
+    "@solana/buffer-layout" "^4.0.0"
+    bigint-buffer "^1.1.5"
+    bn.js "^5.0.0"
+    borsh "^0.7.0"
+    bs58 "^4.0.1"
+    buffer "6.0.1"
+    fast-stable-stringify "^1.0.0"
+    jayson "^3.4.4"
+    node-fetch "2"
+    rpc-websockets "^7.5.0"
+    superstruct "^0.14.2"
+
 "@supercharge/promise-pool@^2.1.0":
   version "2.3.2"
   resolved "https://registry.yarnpkg.com/@supercharge/promise-pool/-/promise-pool-2.3.2.tgz#6366894a7e7bc699bb65e58d8c828113729cf481"
@@ -13410,10 +13431,10 @@ qs@6.11.0, qs@^6.10.3, qs@^6.9.4:
   dependencies:
     side-channel "^1.0.4"
 
-qtw-wallet-adapter@^0.0.6-rc.17:
-  version "0.0.6-rc.17"
-  resolved "https://registry.yarnpkg.com/qtw-wallet-adapter/-/qtw-wallet-adapter-0.0.6-rc.17.tgz#1d73acbfa5044fca5743ac1105c689f647bcb4e3"
-  integrity sha512-N1D9jdp84yORhQ9QZRKgpy3KMU/iNas8rOcPSxGQre5dScXVUdMK6Y3n3iRjXQBCsqwjkpGLHb6g1YQkGyFMDA==
+qtw-wallet-adapter@^0.0.6-rc.50:
+  version "0.0.6-rc.50"
+  resolved "https://registry.yarnpkg.com/qtw-wallet-adapter/-/qtw-wallet-adapter-0.0.6-rc.50.tgz#c751a248bf87d198f84bd5b0318f13b76e2b1a5a"
+  integrity sha512-9kiEm1WnMxG4ump7meniSfBYCkOxruWrXGv1x7N00auwUREQ517uvdfVzBqTidKU873RmBLH+csFfzj49Z1aWw==
   dependencies:
     "@metaplex-solarti/js" "^0.17.3-rc.9"
     "@project-serum/serum" "^0.13.65"
@@ -13421,7 +13442,7 @@ qtw-wallet-adapter@^0.0.6-rc.17:
     "@solana/spl-token-registry" "^0.2.4151"
     "@solarti/spl-name-service" "^0.1.54-alpha-1"
     "@solarti/spl-token" "^0.3.5-alpha"
-    "@solarti/web3.js" "^0.1.3"
+    "@solarti/web3.js" "^0.1.5-rc.1"
     axios "^0.27.2"
     bip39 "^3.0.4"
     bn.js "^5.1.3"
