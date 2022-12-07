@@ -13431,10 +13431,10 @@ qs@6.11.0, qs@^6.10.3, qs@^6.9.4:
   dependencies:
     side-channel "^1.0.4"
 
-qtw-wallet-adapter@^0.0.6-rc.50:
-  version "0.0.6-rc.50"
-  resolved "https://registry.yarnpkg.com/qtw-wallet-adapter/-/qtw-wallet-adapter-0.0.6-rc.50.tgz#c751a248bf87d198f84bd5b0318f13b76e2b1a5a"
-  integrity sha512-9kiEm1WnMxG4ump7meniSfBYCkOxruWrXGv1x7N00auwUREQ517uvdfVzBqTidKU873RmBLH+csFfzj49Z1aWw==
+qtw-wallet-adapter@^0.0.6-rc.59:
+  version "0.0.6-rc.59"
+  resolved "https://registry.yarnpkg.com/qtw-wallet-adapter/-/qtw-wallet-adapter-0.0.6-rc.59.tgz#48b987a1227fc9607e079b4821a1336fa2b3993e"
+  integrity sha512-BZ0ATKkiwOZ1/4T5FIXmiaOggUujHQtU2XQ5fx/wQnPxGQGYsSMXPWXobLRXYfmxkiTr7tfq6VaBXK8mk5tFuA==
   dependencies:
     "@metaplex-solarti/js" "^0.17.3-rc.9"
     "@project-serum/serum" "^0.13.65"

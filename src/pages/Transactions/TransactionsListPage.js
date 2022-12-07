@@ -166,6 +166,7 @@ const TransactionsListPage = ({ t }) => {
                           {showDate(recentTransactions, i)}
                         </GlobalText>
                         <CardButtonTransaction
+                          signature={transaction.signature}
                           transaction={
                             isUnknown
                               ? 'unknown'
@@ -284,6 +285,7 @@ const TransactionsListPage = ({ t }) => {
                           {showDate(recentTransactions, i)}
                         </GlobalText>
                         <CardButtonTransaction
+                          signature={transaction.signature}
                           transaction="swap"
                           tokenImg1={
                             !transaction.error && transaction.tokenLogoIn
@@ -376,6 +378,7 @@ const TransactionsListPage = ({ t }) => {
                           {showDate(recentTransactions, i)}
                         </GlobalText>
                         <CardButtonTransaction
+                          signature={transaction.signature}
                           transaction="interaction"
                           title={TYPES_MAP[transaction.type]}
                           actions={
@@ -411,6 +414,7 @@ const TransactionsListPage = ({ t }) => {
             {loading && <GlobalSkeleton type="ActivityList" />}
             {/*
             <CardButtonTransaction
+              signature={transaction.signature}
               transaction="paid"
               address="AXNAwy7iq6bTthgtojjuUVqA279KhUmppdAbzYSfH18S"
               amount="+5 MLN"

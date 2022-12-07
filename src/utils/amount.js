@@ -1,8 +1,9 @@
 import round from 'lodash/round';
 import isNil from 'lodash/isNil';
 
+// m17: replace $ with star sign {'\u2728'} for popularity/influence index
 export const showAmount = (amount, decimals = 2) =>
-  !isNil(amount) ? `$${round(amount, decimals).toFixed(decimals)}` : '-';
+  !isNil(amount) ? `\u2728${round(amount, decimals).toFixed(decimals)}` : '-';
 export const showValue = (amount, decimals = 2) =>
   !isNil(amount) ? `${round(amount, decimals).toFixed(decimals)}` : '-';
 

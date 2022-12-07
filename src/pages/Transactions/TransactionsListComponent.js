@@ -76,6 +76,7 @@ const TransactionsListComponent = ({ t }) => {
               const isCreate = isUnknown && !transaction.amount;
               return (
                 <CardButtonTransaction
+                  signature={transaction.signature}
                   transaction={
                     isUnknown ? 'unknown' : isReceive ? 'received' : 'sent'
                   }
@@ -175,6 +176,7 @@ const TransactionsListComponent = ({ t }) => {
             case TRANSACTION_TYPE.SWAP:
               return (
                 <CardButtonTransaction
+                  signature={transaction.signature}
                   transaction="swap"
                   tokenImg1={!transaction.error && transaction.tokenLogoIn}
                   tokenImg2={!transaction.error && transaction.tokenLogoOut}
@@ -248,6 +250,7 @@ const TransactionsListComponent = ({ t }) => {
               return (
                 <>
                   <CardButtonTransaction
+                    signature={transaction.signature}
                     transaction="interaction"
                     title={TYPES_MAP[transaction.type]}
                     actions={

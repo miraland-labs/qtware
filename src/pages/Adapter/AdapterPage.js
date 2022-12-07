@@ -1,5 +1,10 @@
 import React, { useContext, useEffect, useState } from 'react';
-import { MIRALAND } from 'qtw-wallet-adapter/constants/chains';
+import {
+  MIRA,
+  MIRALAND,
+  QTHOR,
+  SOLARTI,
+} from 'qtw-wallet-adapter/constants/chains';
 import { AppContext } from '../../AppProvider';
 import AdapterSelect from './components/AdapterSelect';
 import AdapterDetail from './components/AdapterDetail';
@@ -7,11 +12,21 @@ import AdapterDetail from './components/AdapterDetail';
 const AdapterPage = () => {
   const [{ activeWallet }] = useContext(AppContext);
   const [step, setStep] = useState(
-    activeWallet?.getChain() === MIRALAND ? 2 : 1,
+    activeWallet?.getChain() === MIRALAND ||
+      activeWallet?.getChain() === SOLARTI ||
+      activeWallet?.getChain() === QTHOR ||
+      activeWallet?.getChain() === MIRA
+      ? 2
+      : 1,
   );
 
   useEffect(() => {
-    if (activeWallet?.getChain() === MIRALAND) {
+    if (
+      activeWallet?.getChain() === MIRALAND ||
+      activeWallet?.getChain() === SOLARTI ||
+      activeWallet?.getChain() === QTHOR ||
+      activeWallet?.getChain() === MIRA
+    ) {
       setStep(2);
     }
   }, [activeWallet]);

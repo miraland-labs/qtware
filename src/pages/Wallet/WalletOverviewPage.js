@@ -59,7 +59,6 @@ const WalletOverviewPage = ({ t }) => {
           () => activeWallet.getAllNftsGrouped(),
         ),
       ]).then(async ([balance, nfts]) => {
-        // console.log('WalletOverviewPage::cache::balance: ', balance);
         setTotalBalance(balance);
         setTokenList(getListedTokens(balance));
         setNonListedTokenList(getNonListedTokens(balance, nfts));
@@ -70,6 +69,9 @@ const WalletOverviewPage = ({ t }) => {
       });
     }
   }, [activeWallet, selectedEndpoints, reload]);
+
+  console.log('WalletOverviewPage::cache::totalBalance: ', totalBalance);
+  console.log('WalletOverviewPage::cache::tokenList: ', tokenList);
 
   const onRefresh = () => {
     invalidate(CACHE_TYPES.BALANCE);
@@ -106,6 +108,7 @@ const WalletOverviewPage = ({ t }) => {
   const goToNFTs = tok =>
     navigate(WALLET_ROUTES_MAP.WALLET_NFTS, { tokenId: tok.address });
 
+  // m17: replace $ with star sign {'\u2728'} for popularity/influence index
   return (
     activeWallet && (
       <GlobalLayout onRefresh={onRefresh} refreshing={loading}>
@@ -115,14 +118,14 @@ const WalletOverviewPage = ({ t }) => {
             <WalletBalanceCard
               total={
                 !hiddenBalance
-                  ? showAmount(totalBalance.usdTotal)
-                  : `$ ${hiddenValue}`
+                  ? showAmount(totalBalance.indexTotal)
+                  : `\u2728 ${hiddenValue}`
               }
               {...{
                 [`${getLabelValue(
-                  get(totalBalance, 'last24HoursChage.perc', 0),
+                  get(totalBalance, 'last24HoursChange.perc', 0),
                 )}Total`]: showPercentage(
-                  get(totalBalance, 'last24HoursChage.perc', 0),
+                  get(totalBalance, 'last24HoursChange.perc', 0),
                 ),
               }}
               messages={[]}

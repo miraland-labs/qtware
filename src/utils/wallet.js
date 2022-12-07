@@ -30,7 +30,8 @@ export const LOGOS = {
     'https://raw.githubusercontent.com/trustwallet/assets/master/blockchains/solana/info/logo.png',
   MIRALAND:
     // 'https://github.com/miraland-labs/qtware/blob/main/src/images/logo.png',
-    'https://www.arcaps.com/shared/qtware/logo.png',
+    'https://www.arcaps.com/shared/miraland/logo.png',
+  QTHOR: 'https://www.arcaps.com/shared/qtware/logo.png',
   NEAR: 'https://raw.githubusercontent.com/trustwallet/assets/master/blockchains/near/info/logo.png',
   ETHEREUM:
     'https://raw.githubusercontent.com/trustwallet/assets/master/blockchains/ethereum/info/logo.png',
@@ -65,7 +66,7 @@ export const recoverDerivedAccount = async (
 
 //export const getChains = () => Object.keys(chains);
 // export const getChains = () => ['MIRALAND', 'SOLANA'];
-export const getChains = () => ['MIRALAND'];
+export const getChains = () => ['MIRALAND', 'QTHOR'];
 
 export const getDefaultChain = () => 'MIRALAND';
 

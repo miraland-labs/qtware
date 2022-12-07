@@ -34,7 +34,7 @@ const List = ({ tokens, onDetail, hiddenBalance }) => (
         }`}
         actions={[
           <GlobalText key={'amount-action'} type="body2">
-            {hiddenBalance ? hiddenValue : showAmount(t.usdBalance)}
+            {hiddenBalance ? hiddenValue : showAmount(t.indexBalance)}
           </GlobalText>,
           t.last24HoursChange && (
             <GlobalText
