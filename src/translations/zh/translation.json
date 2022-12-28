@@ -207,7 +207,7 @@
     },
     "detail": {
       "connection": {
-        "title": "Allow this site to access your Solarti account?",
+        "title": "Allow this site to access your Miraland account?",
         "advice": "Only connect with sites you trust",
         "auto_approve": "Automatically approve transactions",
         "disclaimer": "Use at your own risk",

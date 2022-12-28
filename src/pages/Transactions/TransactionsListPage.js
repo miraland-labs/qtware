@@ -1,19 +1,18 @@
 import React, { useContext, useEffect, useState } from 'react';
-import { StyleSheet, View, SafeAreaView } from 'react-native';
+import { StyleSheet, View } from 'react-native';
 import moment from 'moment';
 
 import { AppContext } from '../../AppProvider';
 import { withTranslation } from '../../hooks/useTranslations';
-import theme, { globalStyles } from '../../component-library/Global/theme';
+import theme from '../../component-library/Global/theme';
 import {
   TRANSACTION_TYPE,
   TYPES_MAP,
   TOKEN_DECIMALS,
-  SOL_ICON,
   MLN_ICON,
 } from './constants';
 import { cache, invalidate, CACHE_TYPES } from '../../utils/cache';
-import { LOGOS } from '../../utils/wallet';
+// import { LOGOS } from '../../utils/wallet';
 import GlobalLayout from '../../component-library/Global/GlobalLayout';
 import CardButtonTransaction from '../../component-library/CardButton/CardButtonTransaction';
 import GlobalBackTitle from '../../component-library/Global/GlobalBackTitle';
@@ -21,7 +20,7 @@ import GlobalText from '../../component-library/Global/GlobalText';
 import GlobalButton from '../../component-library/Global/GlobalButton';
 import GlobalImage from '../../component-library/Global/GlobalImage';
 import GlobalSkeleton from '../../component-library/Global/GlobalSkeleton';
-import AvatarImage from '../../component-library/Image/AvatarImage';
+// import AvatarImage from '../../component-library/Image/AvatarImage';
 import IconFailed from '../../assets/images/IconFailed.png';
 import IconSuccess from '../../assets/images/IconSuccessGreen.png';
 import Header from '../../component-library/Layout/Header';
@@ -77,6 +76,8 @@ const TransactionsListPage = ({ t }) => {
         setRecentTransactions(recTransactions);
         setLastTransaction(recTransactions?.slice(-1).pop());
         setLoaded(true);
+        // m17 temp tracking
+        console.log('recTransactions: ', recTransactions);
       });
     }
   }, [activeWallet, selectedEndpoints]);
@@ -158,6 +159,7 @@ const TransactionsListPage = ({ t }) => {
                     return (
                       <>
                         <GlobalText
+                          key={`gt-${transaction.signature}`}
                           type="body2"
                           color="secondary"
                           style={
@@ -166,7 +168,7 @@ const TransactionsListPage = ({ t }) => {
                           {showDate(recentTransactions, i)}
                         </GlobalText>
                         <CardButtonTransaction
-                          signature={transaction.signature}
+                          key={transaction.signature}
                           transaction={
                             isUnknown
                               ? 'unknown'
@@ -263,7 +265,7 @@ const TransactionsListPage = ({ t }) => {
                                         {isReceive ? '+' : '-'}
                                         {transaction.amount ||
                                           transaction.transferAmount}
-                                        {` MLN  `}
+                                        {` ${transaction.transferTokenSymbol}  `}
                                       </GlobalText>
                                     )}
                                   </View>,
@@ -277,6 +279,7 @@ const TransactionsListPage = ({ t }) => {
                     return (
                       <>
                         <GlobalText
+                          key={`gt-${transaction.signature}`}
                           type="body2"
                           color="secondary"
                           style={
@@ -285,7 +288,7 @@ const TransactionsListPage = ({ t }) => {
                           {showDate(recentTransactions, i)}
                         </GlobalText>
                         <CardButtonTransaction
-                          signature={transaction.signature}
+                          key={transaction.signature}
                           transaction="swap"
                           tokenImg1={
                             !transaction.error && transaction.tokenLogoIn
@@ -370,6 +373,7 @@ const TransactionsListPage = ({ t }) => {
                     return (
                       <>
                         <GlobalText
+                          key={`gt-${transaction.signature}`}
                           type="body2"
                           color="secondary"
                           style={
@@ -378,7 +382,7 @@ const TransactionsListPage = ({ t }) => {
                           {showDate(recentTransactions, i)}
                         </GlobalText>
                         <CardButtonTransaction
-                          signature={transaction.signature}
+                          key={transaction.signature}
                           transaction="interaction"
                           title={TYPES_MAP[transaction.type]}
                           actions={

@@ -205,7 +205,16 @@
       "content2": "All your assets, in your hands.\nWe don’t have access to them at all.",
       "title3": "Stay tuned",
       "content3": "Follow us at ",
-      "content3b": "@miracleland6"
+      "content3b": "@miracleland6",
+      "blockchain": {
+        "SOLANA": "SOLANA",
+        "NEAR": "NEAR",
+        "ETHEREUM": "ETHEREUM",
+        "SOLARTI": "SOLARTI",
+        "QTHOR": "QTHOR",
+        "MIRA": "MIRA",
+        "MIRALAND": "MIRALAND"
+      }
     }
   },
   "adapter": {
@@ -214,7 +223,7 @@
     },
     "detail": {
       "connection": {
-        "title": "Allow this site to access your Solarti account?",
+        "title": "Allow this site to access your Miraland account?",
         "advice": "Only connect with sites you trust",
         "advice2": "Be careful phishing scams and attacks",
         "auto_approve": "Automatically approve transactions",
@@ -261,11 +270,18 @@
   },
   "nft": {
     "description": "Description",
-    "properties": "Properties",
+    "properties": "Traits/Attributes",
     "send_nft": "Send",
     "send_to": "Send to:",
     "no_nft_found": "No NFTs found",
-    "listed_nft": "NFT Display"
+    "listed_nft": "NFT Display",
+    "list_nft": "List NFT",
+    "delist_nft": "Delist NFT",
+    "sell_price": "Sell Price",
+    "marketplace_name": "Marketplace",
+    "marketplace_fee": "Marketplace Fee",
+    "marketplace_fee_perc": "Marketplace Fee Rate",
+    "preview_sell": "Preview Sell"
   },
   "swap": {
     "swap": "Swap",

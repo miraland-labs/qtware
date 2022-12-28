@@ -103,6 +103,7 @@ const AccountSelectPage = ({ t }) => {
                       onTertiaryPress={() => toggleRemoveDialog(wallet)}
                     />
                     <SimpleDialog
+                      key={`sd-$(wallet.address)`}
                       type="danger"
                       title={
                         <GlobalText center type="headline3" numberOfLines={1}>

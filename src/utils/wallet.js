@@ -66,7 +66,8 @@ export const recoverDerivedAccount = async (
 
 //export const getChains = () => Object.keys(chains);
 // export const getChains = () => ['MIRALAND', 'SOLANA'];
-export const getChains = () => ['MIRALAND', 'QTHOR'];
+// export const getChains = () => ['MIRALAND', 'QTHOR'];
+export const getChains = () => ['MIRALAND'];
 
 export const getDefaultChain = () => 'MIRALAND';
 

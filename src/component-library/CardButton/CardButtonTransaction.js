@@ -13,8 +13,8 @@ const styles = StyleSheet.create({
   },
 });
 
+// signature, // m17 added
 const CardButtonTransaction = ({
-  signature, // m17 added
   transaction,
   address,
   tokenNames,
@@ -30,6 +30,7 @@ const CardButtonTransaction = ({
   touchableStyles,
   tokenImg1,
   tokenImg2,
+  ...props
 }) => {
   const getTransactionTitle = () => {
     const object = transaction;
@@ -51,9 +52,9 @@ const CardButtonTransaction = ({
     }
   };
 
+  // m17 key={signature}
   return (
     <CardButton
-      key={signature}
       image={getTransactionImage(transaction)}
       tokenImg1={tokenImg1}
       tokenImg2={tokenImg2}
@@ -72,6 +73,7 @@ const CardButtonTransaction = ({
       imageStyle={styles.imageStyle}
       actions={actions}
       onPress={onPress}
+      {...props}
     />
   );
 };

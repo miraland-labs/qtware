@@ -6,7 +6,7 @@ import GlobalLayout from '../../../component-library/Global/GlobalLayout';
 import GlobalText from '../../../component-library/Global/GlobalText';
 import GlobalButton from '../../../component-library/Global/GlobalButton';
 import GlobalPadding from '../../../component-library/Global/GlobalPadding';
-import GlobalImage from '../../../component-library/Global/GlobalImage';
+// import GlobalImage from '../../../component-library/Global/GlobalImage';
 import SimpleDialog from '../../../component-library/Dialog/SimpleDialog';
 
 import Logo from './Logo';

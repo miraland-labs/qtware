@@ -3,7 +3,7 @@ import { StyleSheet, View, Linking } from 'react-native';
 
 import { AppContext } from '../../AppProvider';
 import { useNavigation, withParams } from '../../routes/hooks';
-import { ROUTES_MAP as APP_ROUTES_MAP } from '../../routes/app-routes';
+// import { ROUTES_MAP as APP_ROUTES_MAP } from '../../routes/app-routes';
 import { ROUTES_MAP as NFTS_ROUTES_MAP } from './routes';
 import { withTranslation } from '../../hooks/useTranslations';
 import { cache, CACHE_TYPES } from '../../utils/cache';
@@ -13,7 +13,7 @@ import {
   TRANSACTION_STATUS,
 } from '../../utils/wallet';
 import { getMediaRemoteUrl } from '../../utils/media';
-import { TOKEN_DECIMALS, SOL_ICON, MLN_ICON } from '../Transactions/constants';
+import { TOKEN_DECIMALS, MLN_ICON } from '../Transactions/constants';
 
 import theme, { globalStyles } from '../../component-library/Global/theme';
 import GlobalLayout from '../../component-library/Global/GlobalLayout';
@@ -27,9 +27,9 @@ import GlobalInputWithButton from '../../component-library/Global/GlobalInputWit
 import CardButton from '../../component-library/CardButton/CardButton';
 import IconExpandMoreAccent1 from '../../assets/images/IconExpandMoreAccent1.png';
 import IconHyperspace from '../../assets/images/IconHyperspace.jpeg';
-import { isNative } from '../../utils/platform';
+// import { isNative } from '../../utils/platform';
 import { showValue } from '../../utils/amount';
-import QRScan from '../../features/QRScan/QRScan';
+// import QRScan from '../../features/QRScan/QRScan';
 
 import useAnalyticsEventTracker from '../../hooks/useAnalyticsEventTracker';
 import { SECTIONS_MAP, EVENTS_MAP } from '../../utils/tracking';

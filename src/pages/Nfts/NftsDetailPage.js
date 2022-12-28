@@ -7,7 +7,7 @@ import { useNavigation, withParams } from '../../routes/hooks';
 import { ROUTES_MAP } from './routes';
 import { withTranslation } from '../../hooks/useTranslations';
 import { cache, CACHE_TYPES } from '../../utils/cache';
-import { getWalletName } from '../../utils/wallet';
+// import { getWalletName } from '../../utils/wallet';
 import { getMediaRemoteUrl } from '../../utils/media';
 
 import theme, { globalStyles } from '../../component-library/Global/theme';
@@ -72,13 +72,21 @@ const NftsDetailPage = ({ params, t }) => {
         CACHE_TYPES.NFTS_ALL,
         () => activeWallet.getAllNfts(),
       ).then(async nfts => {
-        const nft = nfts.find(n => n.mint === params.id);
+        const nft = nfts.find(
+          // eslint-disable-next-line eqeqeq
+          n => n.mint?.address === params.id || n.mint?.address == params.id,
+        );
         if (nft) {
+          console.log('setNftDetail with current nft: ', nft.mint.address);
           setNftDetail(nft);
+        } else {
+          console.log('No nft found matching params.id: ', params.id);
         }
         const listed = await activeWallet.getListedNfts();
-        setListedInfo(listed.find(l => l.token_address === params.id));
-        setListedLoaded(true);
+        setListedInfo(listed.find(l => l.mint?.address === params.id));
+        // mira: comment out vanilla true for now
+        // setListedLoaded(true);
+        setListedLoaded(false);
         setLoaded(true);
       });
     }
@@ -86,7 +94,7 @@ const NftsDetailPage = ({ params, t }) => {
 
   const getListBtnTitle = () =>
     !listedLoaded ? (
-      '...'
+      'coming soon...'
     ) : listedInfo ? (
       <>
         {t('nft.delist_nft')}
@@ -110,7 +118,8 @@ const NftsDetailPage = ({ params, t }) => {
     );
 
   const hasProperties = () => {
-    return get(nftDetail, 'extras.attributes', []).length > 0;
+    // return get(nftDetail, 'extras.attributes', []).length > 0;
+    return get(nftDetail, 'json.attributes', []).length > 0;
   };
 
   const goToBack = () => {
@@ -166,7 +175,7 @@ const NftsDetailPage = ({ params, t }) => {
 
             <View style={styles.imageContainer}>
               <GlobalImage
-                source={getMediaRemoteUrl(nftDetail.media)}
+                source={getMediaRemoteUrl(nftDetail.json?.image)}
                 style={styles.nftImage}
                 square
                 squircle
@@ -248,7 +257,7 @@ const NftsDetailPage = ({ params, t }) => {
           <GlobalPadding size="sm" />
 
           <GlobalText type="body1" color="secondary">
-            {nftDetail.description}
+            {nftDetail.json?.description}
           </GlobalText>
 
           <GlobalPadding size="xl" />
@@ -259,7 +268,7 @@ const NftsDetailPage = ({ params, t }) => {
               <GlobalPadding size="sm" />
 
               <FlatList
-                data={get(nftDetail, 'extras.attributes', []).map(a => ({
+                data={get(nftDetail, 'json.attributes', []).map(a => ({
                   caption: a.trait_type,
                   title: a.value,
                   description: '',

@@ -3,7 +3,7 @@ import { StyleSheet, Linking, View } from 'react-native';
 
 import { useNavigation } from '../../routes/hooks';
 import { withTranslation } from '../../hooks/useTranslations';
-import { getChains, LOGOS } from '../../utils/wallet';
+import { getChains, getDefaultChain, LOGOS } from '../../utils/wallet';
 import { ROUTES_MAP as ROUTES_MAP_APP } from '../../routes/app-routes';
 import { ROUTES_MAP } from './routes';
 import theme from '../../component-library/Global/theme';
@@ -52,9 +52,9 @@ const styles = StyleSheet.create({
 });
 
 const SelectAction = ({ onNext, onBack, onboarded, t }) => {
-  const { trackEvent } = useAnalyticsEventTracker(
-    SECTIONS_MAP.SELECT_CREATE_RECOVER,
-  );
+  // const { trackEvent } = useAnalyticsEventTracker(
+  //   SECTIONS_MAP.SELECT_CREATE_RECOVER,
+  // );
   return (
     <>
       <GlobalLayout.Header>
@@ -145,7 +145,8 @@ const SelectChain = ({ onNext, blockChains, onBack, t, onComingSoon }) => (
         key={chain}
         onPress={() => onNext(chain)}
         icon={<AvatarImage url={LOGOS[chain]} size={48} />}
-        title={chain}
+        // title={chain}
+        title={t(`wallet.onboarding.blockchain.${chain}`)}
         touchableStyles={styles.touchable}
       />
     ))}
@@ -198,7 +199,10 @@ const SelectOptionsPage = ({ t }) => {
   const [currentChain, setCurrentChain] = useState(null);
   const onSelectAction = action => {
     setActionRoute(action);
-    setStep(1);
+    // m17: vanilla step 1 is to choose chain, skip to choose default chain directly
+    // add step 2 for direct miraland navigation purpose
+    // setStep(1);
+    setStep(2);
   };
   const onSelectChain = chain => {
     trackEvent(EVENTS_MAP.SELECT_CHAIN, chain);
@@ -242,6 +246,8 @@ const SelectOptionsPage = ({ t }) => {
           />
         </>
       )}
+      {/* m17 added step 2 */}
+      {step === 2 && onSelectChain(getDefaultChain())}
     </GlobalLayout>
   );
 };

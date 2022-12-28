@@ -2702,7 +2702,7 @@
     "@solana/web3.js" "^1.56.2"
     bn.js "^5.2.0"
 
-"@metaplex-solarti/beet-solana@^0.4.0-alpha-1":
+"@metaplex-solarti/beet-solana@^0.4.0-alpha-1", "@metaplex-solarti/beet-solana@^0.4.0-rc.2":
   version "0.4.0-rc.2"
   resolved "https://registry.yarnpkg.com/@metaplex-solarti/beet-solana/-/beet-solana-0.4.0-rc.2.tgz#6191d866b71e1e70271eb3a19c833cab95846a4c"
   integrity sha512-bAnWkpCA8gsxBWI/2DDO5hS0WX9KLbsj1BtEFespMAkUsTR3ZG9td6bboeoRFUJBeI6VtKPaYyjYpcj8y3nF9w==
@@ -2782,6 +2782,19 @@
     "@metaplex-solarti/beet-solana" "^0.4.0-alpha-1"
     "@solarti/spl-token" "^0.3.5-alpha"
     "@solarti/web3.js" "^0.1.3"
+    bn.js "^5.2.0"
+    debug "^4.3.3"
+
+"@metaplex-solarti/mpl-token-metadata@^2.5.1-rc.1":
+  version "2.5.1-rc.1"
+  resolved "https://registry.yarnpkg.com/@metaplex-solarti/mpl-token-metadata/-/mpl-token-metadata-2.5.1-rc.1.tgz#ced82cf789d8e1509125f85a2e3a18531cc4be04"
+  integrity sha512-OEygAvRNvCcKHicpjwrt5f10fmBzGnUZIJO0sHDkkfMIUrZgRLWtiYeH1zVa9ySMqIAr3cXsprOQBkaZSxhRtQ==
+  dependencies:
+    "@metaplex-foundation/beet" "^0.7.1"
+    "@metaplex-foundation/cusper" "^0.0.2"
+    "@metaplex-solarti/beet-solana" "^0.4.0-rc.2"
+    "@solarti/spl-token" "^0.3.6-rc.1"
+    "@solarti/web3.js" "^0.1.5-rc.1"
     bn.js "^5.2.0"
     debug "^4.3.3"
 
@@ -3453,6 +3466,15 @@
   version "0.3.5-alpha"
   resolved "https://registry.yarnpkg.com/@solarti/spl-token/-/spl-token-0.3.5-alpha.tgz#61239f56f09ea61ad2b6ae05a38a4e61411c301d"
   integrity sha512-/Y92A41qvCiP6Zp0XdD96b3zO1H65reSo2msHj6QdGE24+jFOwpqevSVASoVs9BVfi4EEzzj6entPP/rx1iB6Q==
+  dependencies:
+    "@solana/buffer-layout" "^4.0.0"
+    "@solana/buffer-layout-utils" "^0.2.0"
+    buffer "^6.0.3"
+
+"@solarti/spl-token@^0.3.6-rc.1":
+  version "0.3.6-rc.2"
+  resolved "https://registry.yarnpkg.com/@solarti/spl-token/-/spl-token-0.3.6-rc.2.tgz#39640949874c9724c0dca37f2298ffd80150be94"
+  integrity sha512-CjINErajpNHSJ+51Qbia5zDafe1scyHtUvxS6qk1xwoR6g9Ci+b3c5ckpyNzZxegIgJS/lM8+toHyNLE2LcJ1A==
   dependencies:
     "@solana/buffer-layout" "^4.0.0"
     "@solana/buffer-layout-utils" "^0.2.0"
@@ -13431,12 +13453,13 @@ qs@6.11.0, qs@^6.10.3, qs@^6.9.4:
   dependencies:
     side-channel "^1.0.4"
 
-qtw-wallet-adapter@^0.0.6-rc.59:
-  version "0.0.6-rc.59"
-  resolved "https://registry.yarnpkg.com/qtw-wallet-adapter/-/qtw-wallet-adapter-0.0.6-rc.59.tgz#48b987a1227fc9607e079b4821a1336fa2b3993e"
-  integrity sha512-BZ0ATKkiwOZ1/4T5FIXmiaOggUujHQtU2XQ5fx/wQnPxGQGYsSMXPWXobLRXYfmxkiTr7tfq6VaBXK8mk5tFuA==
+qtw-wallet-adapter@^0.0.6-rc.86:
+  version "0.0.6-rc.86"
+  resolved "https://registry.yarnpkg.com/qtw-wallet-adapter/-/qtw-wallet-adapter-0.0.6-rc.86.tgz#e4ebef087b56c2064b782ce9b1e3cca8ac90ab35"
+  integrity sha512-YmcC+3ct/pU0AZVYcHk2JVfuiQ3LxXFue6O3rletx8ktoQQQFLoAkmFvdQQx/WHcrRiZXgpkSjwl9ZNqgM9ruQ==
   dependencies:
     "@metaplex-solarti/js" "^0.17.3-rc.9"
+    "@metaplex-solarti/mpl-token-metadata" "^2.5.1-rc.1"
     "@project-serum/serum" "^0.13.65"
     "@solana/buffer-layout" "^4.0.0"
     "@solana/spl-token-registry" "^0.2.4151"

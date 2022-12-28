@@ -70,8 +70,8 @@ const WalletOverviewPage = ({ t }) => {
     }
   }, [activeWallet, selectedEndpoints, reload]);
 
-  console.log('WalletOverviewPage::cache::totalBalance: ', totalBalance);
-  console.log('WalletOverviewPage::cache::tokenList: ', tokenList);
+  // console.log('WalletOverviewPage::cache::totalBalance: ', totalBalance);
+  // console.log('WalletOverviewPage::cache::tokenList: ', tokenList);
 
   const onRefresh = () => {
     invalidate(CACHE_TYPES.BALANCE);
@@ -101,7 +101,7 @@ const WalletOverviewPage = ({ t }) => {
     } else {
       navigate(NFTS_ROUTES_MAP.NFTS_DETAIL, {
         // id: nft?.mint || nft?.items?.[0].mint, // m17: better for production
-        id: nft.mint || nft.items[0].mint,
+        id: nft?.mint?.address || nft?.mintAddress,
       });
     }
   };

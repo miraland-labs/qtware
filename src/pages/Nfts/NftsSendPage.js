@@ -3,7 +3,7 @@ import { StyleSheet, View, Linking } from 'react-native';
 
 import { AppContext } from '../../AppProvider';
 import { useNavigation, withParams } from '../../routes/hooks';
-import { ROUTES_MAP as APP_ROUTES_MAP } from '../../routes/app-routes';
+// import { ROUTES_MAP as APP_ROUTES_MAP } from '../../routes/app-routes';
 import { ROUTES_MAP as NFTS_ROUTES_MAP } from './routes';
 import { withTranslation } from '../../hooks/useTranslations';
 import { cache, CACHE_TYPES } from '../../utils/cache';
@@ -84,7 +84,11 @@ const NftsSendPage = ({ params, t }) => {
         CACHE_TYPES.NFTS_ALL,
         () => activeWallet.getAllNfts(),
       ).then(nfts => {
-        const nft = nfts.find(n => n.mint === params.id);
+        // const nft = nfts.find(n => n.mint?.address === params.id);
+        const nft = nfts.find(
+          // eslint-disable-next-line eqeqeq
+          n => n.mint?.address === params.id || n.mint?.address == params.id,
+        );
         if (nft) {
           setNftDetail(nft);
         }
@@ -111,7 +115,7 @@ const NftsSendPage = ({ params, t }) => {
       try {
         const feeSend = await activeWallet.estimateTransferFee(
           recipientAddress,
-          nftDetail.mint,
+          nftDetail.mint?.address,
           1,
         );
         setFee(feeSend);
@@ -129,7 +133,7 @@ const NftsSendPage = ({ params, t }) => {
       setStep(3);
       const txId = await activeWallet.createTransferTransaction(
         recipientAddress,
-        nftDetail.mint,
+        nftDetail.mint?.address,
         1,
       );
       setTransactionId(txId);
@@ -186,7 +190,8 @@ const NftsSendPage = ({ params, t }) => {
             <View style={globalStyles.centered}>
               <View style={[globalStyles.squareRatio, styles.mediumSizeImage]}>
                 <GlobalImage
-                  source={getMediaRemoteUrl(nftDetail.media)}
+                  // source={getMediaRemoteUrl(nftDetail.media)}
+                  source={getMediaRemoteUrl(nftDetail.json?.image)}
                   style={globalStyles.bigImage}
                   square
                   squircle
@@ -308,7 +313,8 @@ const NftsSendPage = ({ params, t }) => {
             <View style={globalStyles.centered}>
               <View style={[globalStyles.squareRatio, styles.mediumSizeImage]}>
                 <GlobalImage
-                  source={getMediaRemoteUrl(nftDetail.media)}
+                  // source={getMediaRemoteUrl(nftDetail.media)}
+                  source={getMediaRemoteUrl(nftDetail.json?.image)}
                   style={globalStyles.bigImage}
                   square
                   squircle
