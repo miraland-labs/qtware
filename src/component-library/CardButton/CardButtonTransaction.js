@@ -3,7 +3,6 @@ import { StyleSheet } from 'react-native';
 
 import theme from '../Global/theme';
 import CardButton from './CardButton';
-import GlobalText from '../Global/GlobalText';
 
 import { getTransactionImage, getShortAddress } from '../../utils/wallet';
 

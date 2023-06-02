@@ -5,7 +5,7 @@ import { withTranslation } from '../../hooks/useTranslations';
 import { AppContext } from '../../AppProvider';
 import { ROUTES_MAP as ONBOARDING_ROUTES_MAP } from '../Onboarding/routes';
 import { ROUTES_MAP as ROUTES_SETTINGS_MAP } from './routes';
-import { ROUTES_MAP as WALLET_ROUTES_MAP } from '../Wallet/routes';
+// import { ROUTES_MAP as WALLET_ROUTES_MAP } from '../Wallet/routes';
 import { useNavigation } from '../../routes/hooks';
 import {
   getWalletChain,
@@ -79,10 +79,10 @@ const SettingsOptionsPage = ({ t }) => {
   const goToNetwork = () =>
     navigate(ROUTES_SETTINGS_MAP.SETTINGS_CHANGENETWORK);
 
-  const goToSecurity = () => navigate(ROUTES_SETTINGS_MAP.SETTINGS_SECURITY);
+  // const goToSecurity = () => navigate(ROUTES_SETTINGS_MAP.SETTINGS_SECURITY);
 
-  const goToNofifications = () =>
-    navigate(ROUTES_SETTINGS_MAP.SETTINGS_NOTIFICATIONS);
+  // const goToNofifications = () =>
+  //   navigate(ROUTES_SETTINGS_MAP.SETTINGS_NOTIFICATIONS);
 
   const goToTrustedApps = () =>
     navigate(ROUTES_SETTINGS_MAP.SETTINGS_TRUSTEDAPPS);

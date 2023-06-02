@@ -1,4 +1,4 @@
-import React, { useState, useContext, useEffect } from 'react';
+import React, { useState, useContext } from 'react';
 import { StyleSheet, View, Linking } from 'react-native';
 
 import { AppContext } from '../../AppProvider';
@@ -7,12 +7,12 @@ import { ROUTES_MAP as APP_ROUTES_MAP } from '../../routes/app-routes';
 import { ROUTES_MAP as TOKEN_ROUTES_MAP } from './routes';
 import { withTranslation } from '../../hooks/useTranslations';
 import {
-  LOGOS,
+  // LOGOS,
   getTransactionImage,
   TRANSACTION_STATUS,
   getWalletName,
 } from '../../utils/wallet';
-import { getMediaRemoteUrl } from '../../utils/media';
+// import { getMediaRemoteUrl } from '../../utils/media';
 import useToken from '../../hooks/useToken';
 import { TOKEN_DECIMALS } from '../Transactions/constants';
 
@@ -173,7 +173,14 @@ const TokenSendPage = ({ params, t }) => {
               />
 
               <CardButtonWallet
-                title={t('token.send.from', { name: token.name })}
+                // title={t('token.send.from', { name: token.name })} // MI， vanilla
+                title={t('token.send.from', {
+                  name:
+                    t(`token_symbol_names.${token.symbol}`) ===
+                    `token_symbol_names.${token.symbol}`
+                      ? token.name
+                      : t(`token_symbol_names.${token.symbol}`),
+                })} // MI
                 address={activeWallet.getReceiveAddress()}
                 image={token.logo}
                 imageSize="md"
@@ -254,7 +261,7 @@ const TokenSendPage = ({ params, t }) => {
               <GlobalButton
                 type="secondary"
                 flex
-                title="Cancel"
+                title={t('token.send.cancel')}
                 onPress={onCancel}
                 style={[globalStyles.button, globalStyles.buttonLeft]}
                 touchableStyles={globalStyles.buttonTouchable}
@@ -386,7 +393,7 @@ const TokenSendPage = ({ params, t }) => {
                 {fee && !addressEmpty && (
                   <View style={globalStyles.inlineWell}>
                     <GlobalText type="caption" color="tertiary">
-                      Network Fee
+                      {t(`token.send.network_fee`)}
                     </GlobalText>
 
                     <GlobalText type="body2">
@@ -466,6 +473,8 @@ const TokenSendPage = ({ params, t }) => {
                     wide
                     title={t(`token.send.goto_explorer`)}
                     onPress={openTransaction}
+                    disabled={true}
+                    disableElevation
                     style={globalStyles.button}
                     touchableStyles={globalStyles.buttonTouchable}
                   />
@@ -495,7 +504,7 @@ const TokenSendPage = ({ params, t }) => {
                       ? t(`token.send.transaction_creating`)
                       : t(`token.send.view_transaction`)
                   }
-                  readonly={status === 'creating'}
+                  readonly={status === 'creating' || true} // MI: temp disable button. vanilla: status === 'creating'
                   onPress={openTransaction}
                 />
               )}

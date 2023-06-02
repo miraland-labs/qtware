@@ -65,8 +65,7 @@ const AccountEditSeedPhrasePage = ({ params, t }) => {
         <GlobalBackTitle onBack={onBack} title={t(`general.seed_phrase`)} />
 
         <GlobalText type="body1" center>
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-          eiusmod tempor incididunt ut labore et dolore magna aliqua.
+          {t(`general.no_share`)}
         </GlobalText>
 
         <GlobalPadding size="lg" />

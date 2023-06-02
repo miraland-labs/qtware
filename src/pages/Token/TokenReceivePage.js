@@ -64,6 +64,7 @@ const TokenReceivePage = ({ t }) => {
                 <GlobalButton onPress={onCopyAlias} size="medium">
                   <GlobalImage source={IconCopy} size="xs" />
                   <GlobalText type="button">Copy</GlobalText>
+                  {/* <GlobalText type="button">{t(`actions.copy`)}</GlobalText> */}
                 </GlobalButton>
               </View>
             )}
@@ -75,7 +76,8 @@ const TokenReceivePage = ({ t }) => {
 
               <GlobalButton onPress={onCopyAddress} size="medium">
                 <GlobalImage source={IconCopy} size="xs" />
-                <GlobalText type="button">Copy</GlobalText>
+                {/* <GlobalText type="button">Copy</GlobalText> */}
+                <GlobalText type="button">{t(`actions.copy`)}</GlobalText>
               </GlobalButton>
             </View>
 

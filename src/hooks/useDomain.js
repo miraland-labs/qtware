@@ -1,6 +1,6 @@
 import { useContext, useEffect, useState } from 'react';
 import { AppContext } from '../AppProvider';
-import { cache, CACHE_TYPES } from '../utils/cache';
+// import { cache, CACHE_TYPES } from '../utils/cache';
 
 const useDomain = () => {
   const [{ activeWallet }] = useContext(AppContext);

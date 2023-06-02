@@ -1,7 +1,7 @@
 import React, { useContext, useEffect, useState } from 'react';
 import { StyleSheet, Linking, View } from 'react-native';
 import get from 'lodash/get';
-import { getTokenByAddress } from 'qtw-wallet-adapter/services/solana/solana-token-list-service';
+import { getTokenByAddress } from 'qtw-wallet-adapter/services/miraland/miraland-token-list-service';
 import { AppContext } from '../../AppProvider';
 import { useNavigation } from '../../routes/hooks';
 import { withTranslation } from '../../hooks/useTranslations';
@@ -14,7 +14,7 @@ import GlobalImage from '../../component-library/Global/GlobalImage';
 import GlobalPadding from '../../component-library/Global/GlobalPadding';
 import GlobalText from '../../component-library/Global/GlobalText';
 import InputWithTokenSelector from '../../features/InputTokenSelector';
-import IconSwapAccent1 from '../../assets/images/IconSwapAccent1.png';
+// import IconSwapAccent1 from '../../assets/images/IconSwapAccent1.png';
 import {
   getAvailableTokens,
   getFeaturedTokens,
@@ -198,7 +198,7 @@ const SwapPage = ({ t }) => {
 
   const { trackEvent } = useAnalyticsEventTracker(SECTIONS_MAP.SWAP);
 
-  const [transactions, setTransactions] = useState([]);
+  // const [transactions, setTransactions] = useState([]);
   const [setupTransaction, setSetupTransaction] = useState('');
   const [swapTransaction, setSwapTransaction] = useState('');
   const [cleanupTransaction, setCleanupTransaction] = useState('');

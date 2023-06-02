@@ -6,9 +6,10 @@
     "address": "Address",
     "to": "To",
     "name_or_address": "Name or \"{{token}}\" Address",
-    "recipient_s_address": "Recipient´s \"{{token}}\" Address",
+    "recipient_s_address": "Recipient´s {{token}} blockchain address",
     "seed_phrase": "Secret Phrase",
     "private_key": "Private Key",
+    "no_share": "Do not share your secret",
     "balance": "Balance",
     "sending": "Sending...",
     "loading": "Loading...",
@@ -77,6 +78,7 @@
       "upload_photo": "Upload Photo",
       "select_nft_to_profile": "Select NFT to Profile",
       "full_nft_description": "Full NFT Description",
+      "select_avatar": "Select Avatar",
       "wallet_address": "Wallet address"
     },
     "addressbook": {
@@ -105,8 +107,8 @@
     },
     "receive": {
       "title": "Receive",
-      "solana_warning": "This address is for receive MLN and SPL tokens only on Solarti",
-      "warning": "This address is for receive MLN and SPL tokens only on Solarti"
+      "solana_warning": "This address is for receive MLN and Solarti tokens only on Miraland",
+      "warning": "This address is for receive MLN and Solarti tokens only on Miraland"
     },
     "send": {
       "address": {
@@ -117,6 +119,7 @@
       "amount": {
         "invalid": "Insufficient funds"
       },
+      "cancel": "Cancel",
       "next": "Next",
       "validate": "Validate",
       "from": "From: {{name}}",
@@ -128,7 +131,8 @@
       "transaction_fail": "Fail",
       "goto_explorer": "Go to Explorer",
       "view_transaction": "View Transaction",
-      "empty_account_fee": "It is not possible to estimate the fee because the destination account is empty"
+      "empty_account_fee": "It is not possible to estimate the fee because the destination account is empty",
+      "network_fee": "Network Fee"
     },
     "balance": {
       "percentage_info": "Variation of your position in the last 24 hours."
@@ -174,7 +178,7 @@
       "choose_a_password_body": "You will need it to unlock your wallet",
       "passwordNew": "New password",
       "passwordRepeat": "Repeat password",
-      "i_accept_terms_conditions": "By tapping the Create Wallet button \nI accept the Terms & Conditions",
+      "i_accept_terms_conditions": "🎗️Click me to review Terms and Conditions.\nBy tapping the Create Wallet button \nI accept the Terms & Conditions",
       "passwordChecking": "Checking...",
       "success_message": "Congratulations!",
       "success_message_body": "Your wallet is now ready",
@@ -192,7 +196,7 @@
       "messageTitle": "Recover Existing Wallet",
       "messageBody": "Recover your wallet using your 12/24 words secret phrase.",
       "pasteSeed": "Paste your secret phrase",
-      "i_accept_terms_conditions": "By tapping the Recover Wallet button \nI accept the Terms & Conditions"
+      "i_accept_terms_conditions": "🎗️Click me to review Terms and Conditions.\nBy tapping the Recover Wallet button \nI accept the Terms & Conditions"
     },
     "onboarding": {
       "titleOnboarded": "Add New Wallet",
@@ -200,7 +204,7 @@
       "select_blockchain": "Select Blockchain",
       "select_blockchain_text": "Keep in mind that the wallet you are about to create will only work in that particular blockchain.\nYou can add other blockchains later from this same menu.",
       "title1": "Welcome to Qtware!",
-      "content1": "Your trusted & open-source wallet\nfor web3/metaverse horizon",
+      "content1": "Your trusted, trustless & open-source wallet\nfor web3/metaverse and ai era",
       "title2": "Keep the control\nof your tokens",
       "content2": "All your assets, in your hands.\nWe don’t have access to them at all.",
       "title3": "Stay tuned",
@@ -259,14 +263,15 @@
     }
   },
   "transactions": {
-    "your_transactions": "Your Transactions",
+    "your_transactions": "My Transactions",
     "recent_activity": "Recent Activity",
     "transaction_detail": "Transaction Detail",
     "detail_back": "Go Back",
     "view_transaction": "View Transaction",
     "today": "Today",
     "yesterday": "Yesterday",
-    "empty": "No transactions found"
+    "empty": "No transactions of this wallet found",
+    "load_more": "Load more"
   },
   "nft": {
     "description": "Description",
@@ -293,5 +298,23 @@
     "refresh_quote": "Refresh Quote",
     "total_fee": "Total fee",
     "go_to_explorer": "Go to Explorer"
+  },
+  "routes": {
+    "Wallet": "Wallet",
+    "NFT": "NFT",
+    "Swap": "Swap",
+    "Transactions": "Transactions",
+    "Settings": "Settings"
+  },
+  "token_symbol_names": {
+    "MLN": "Miraland",
+    "VEP": "Violet Engine Points",
+    "BAYPT": "Baydoven Points",
+    "BAYES": "Baydoven Eternal Stars",
+    "BAGEL": "Bagels",
+    "MELON": "Melons",
+    "QTON": "Qing Tong",
+    "CAT": "Crypto-Ai-Transformer X",
+    "WLRT": "WhiteList Redemption Coupons"
   }
 }

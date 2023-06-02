@@ -67,10 +67,10 @@ const NftsListingPage = ({ params, t }) => {
   const [step, setStep] = useState(isListed ? 2 : 1);
   const [nftDetail, setNftDetail] = useState({});
   const [transactionId, setTransactionId] = useState();
-  const [error, setError] = useState(false);
-  const [solBalance, setSolBalance] = useState(null);
+  const [error] = useState(false);
+  const [mlnBalance, setMlnBalance] = useState(null);
   const [price, setPrice] = useState(null);
-  const [fee, setFee] = useState(5000);
+  const [fee] = useState(5000);
   const [{ activeWallet, hiddenValue, config }] = useContext(AppContext);
 
   const { trackEvent } = useAnalyticsEventTracker(SECTIONS_MAP.NFT_SEND);
@@ -91,7 +91,7 @@ const NftsListingPage = ({ params, t }) => {
       ]).then(async ([balance, nfts]) => {
         const tks = balance.items || [];
         const nft = nfts.find(n => n.mint === params.id);
-        setSolBalance(tks.length ? tks[0] : null);
+        setMlnBalance(tks.length ? tks[0] : null);
         if (nft) {
           setNftDetail(nft);
         }
@@ -108,7 +108,7 @@ const NftsListingPage = ({ params, t }) => {
 
   const zeroAmount = parseFloat(price) <= 0;
   const validAmount =
-    parseFloat(price) * 0.01 <= solBalance?.uiAmount && parseFloat(price) > 0;
+    parseFloat(price) * 0.01 <= mlnBalance?.uiAmount && parseFloat(price) > 0;
 
   const goToBack = () => {
     if (step === 3) {
@@ -241,7 +241,7 @@ const NftsListingPage = ({ params, t }) => {
             <GlobalPadding size="xs" />
 
             <GlobalText type="body1" color="tertiary">
-              {showValue((price === '.' ? 0 : price) * solBalance?.usdPrice, 6)}{' '}
+              {showValue((price === '.' ? 0 : price) * mlnBalance?.usdPrice, 6)}{' '}
               {t('general.usd')}
             </GlobalText>
 
@@ -379,7 +379,7 @@ const NftsListingPage = ({ params, t }) => {
                         paddingHorizontal: theme.gutters.paddingSM,
                       },
                     ]}>
-                    {showValue(price * solBalance?.usdPrice, 2)}{' '}
+                    {showValue(price * mlnBalance?.usdPrice, 2)}{' '}
                     {t('general.usd')}
                   </GlobalText>
                 </View>
@@ -550,6 +550,8 @@ const NftsListingPage = ({ params, t }) => {
                   wide
                   title={t(`token.send.goto_explorer`)}
                   onPress={openTransaction}
+                  disabled={true}
+                  disableElevation
                   style={globalStyles.button}
                   touchableStyles={globalStyles.buttonTouchable}
                 />

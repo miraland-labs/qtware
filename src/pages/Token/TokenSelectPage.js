@@ -18,15 +18,15 @@ import GlobalPadding from '../../component-library/Global/GlobalPadding';
 import CardButton from '../../component-library/CardButton/CardButton';
 import GlobalSkeleton from '../../component-library/Global/GlobalSkeleton';
 
-import useAnalyticsEventTracker from '../../hooks/useAnalyticsEventTracker';
-import { SECTIONS_MAP, EVENTS_MAP } from '../../utils/tracking';
+// import useAnalyticsEventTracker from '../../hooks/useAnalyticsEventTracker';
+// import { SECTIONS_MAP } from '../../utils/tracking';
 
 const MAX_PAG = 20;
 
 const TokenSelectPage = ({ params, t }) => {
-  const { trackEvent } = useAnalyticsEventTracker(
-    SECTIONS_MAP.SEND_SELECT_TOKEN,
-  );
+  // const { trackEvent } = useAnalyticsEventTracker(
+  //   SECTIONS_MAP.SEND_SELECT_TOKEN,
+  // );
   const navigate = useNavigation();
   const [loaded, setloaded] = useState(false);
 
@@ -92,12 +92,12 @@ const TokenSelectPage = ({ params, t }) => {
     }
   };
 
-  const goToAddToken = () => {
-    navigate(TOKEN_ROUTES_MAP.TOKEN_ADD, {
-      action: params.action,
-      walletAddress: activeWallet.getReceiveAddress(),
-    });
-  };
+  // const goToAddToken = () => {
+  //   navigate(TOKEN_ROUTES_MAP.TOKEN_ADD, {
+  //     action: params.action,
+  //     walletAddress: activeWallet.getReceiveAddress(),
+  //   });
+  // };
 
   return loaded ? (
     <GlobalLayout fullscreen>
@@ -121,7 +121,13 @@ const TokenSelectPage = ({ params, t }) => {
                 key={token.mint || token.address}
                 onPress={() => onSelect(token)}
                 icon={<GlobalImage url={token.logo} size="md" circle />}
-                title={token.name}
+                // title={token.name} // MI, vanilla
+                title={
+                  t(`token_symbol_names.${token.symbol}`) ===
+                  `token_symbol_names.${token.symbol}`
+                    ? token.name
+                    : t(`token_symbol_names.${token.symbol}`)
+                } // MI
                 actions={[
                   <GlobalText key={'amount-action'} type="body2">
                     {hiddenBalance ? hiddenValue : showAmount(token.usdBalance)}

@@ -23,7 +23,7 @@ const styles = StyleSheet.create({
   },
 });
 
-// m17, change Image source: source={`http://static.salmonwallet.io/avatar/${id}.png`}
+// m17, change Image source: source={`https://www.arcaps.com/shared/qtware/Avatar.png`}
 const GlobalAvatarList = ({ onClick }) => {
   const [loaded, setLoaded] = useState(false);
   return (
@@ -32,7 +32,7 @@ const GlobalAvatarList = ({ onClick }) => {
       <Grid
         spacing={2}
         columns={3}
-        items={[...Array(25).keys()].map(index => {
+        items={[...Array(50).keys()].map(index => {
           const id = String(index).padStart(2, '0');
           return (
             <TouchableOpacity
@@ -40,7 +40,7 @@ const GlobalAvatarList = ({ onClick }) => {
               style={styles.touchable}>
               <View key={id} style={styles.image}>
                 <Image
-                  source={`https://www.arcaps.com/shared/qtware/Avatar.png`}
+                  source={`https://www.arcaps.com/shared/qtware/avatar/${id}.png`}
                   resizeMode="contain"
                   style={styles.block}
                   onLoad={() => {

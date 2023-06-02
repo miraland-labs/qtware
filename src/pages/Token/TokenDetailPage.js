@@ -64,7 +64,13 @@ const TokenDetailPage = ({ params, t }) => {
         <GlobalLayout.Header>
           <GlobalBackTitle
             onBack={goToBack}
-            inlineTitle={token.name}
+            // inlineTitle={token.name} // MI, vanilla
+            inlineTitle={
+              t(`token_symbol_names.${token.symbol}`) ===
+              `token_symbol_names.${token.symbol}`
+                ? token.name
+                : t(`token_symbol_names.${token.symbol}`)
+            } // MI
             inlineAddress={params.tokenId}
           />
 

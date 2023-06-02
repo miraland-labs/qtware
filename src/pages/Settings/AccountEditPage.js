@@ -43,10 +43,10 @@ const AccountEditPage = ({ params, t }) => {
       address: params.address,
     });
 
-  const goToWalletNotifications = () =>
-    navigate(ROUTES_SETTINGS_MAP.SETTINGS_ACCOUNT_EDIT_NOTIFICATIONS, {
-      address: params.address,
-    });
+  // const goToWalletNotifications = () =>
+  //   navigate(ROUTES_SETTINGS_MAP.SETTINGS_ACCOUNT_EDIT_NOTIFICATIONS, {
+  //     address: params.address,
+  //   });
 
   const goToSeedPhrase = () =>
     navigate(ROUTES_SETTINGS_MAP.SETTINGS_ACCOUNT_EDIT_SEEDPHRASE, {

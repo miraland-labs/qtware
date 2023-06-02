@@ -7,11 +7,11 @@ import {
   TRANSACTION_TYPE,
   TYPES_MAP,
   TOKEN_DECIMALS,
-  SOL_ICON,
+  // SOL_ICON,
   MLN_ICON,
 } from './constants';
 import { cache, CACHE_TYPES } from '../../utils/cache';
-import { LOGOS } from '../../utils/wallet';
+// import { LOGOS } from '../../utils/wallet';
 import CardButtonTransaction from '../../component-library/CardButton/CardButtonTransaction';
 import GlobalCollapse from '../../component-library/Global/GlobalCollapse';
 import GlobalText from '../../component-library/Global/GlobalText';

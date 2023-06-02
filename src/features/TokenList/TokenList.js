@@ -4,6 +4,7 @@ import CardButton from '../../component-library/CardButton/CardButton';
 import GlobalText from '../../component-library/Global/GlobalText';
 import GlobalSkeleton from '../../component-library/Global/GlobalSkeleton';
 import AvatarImage from '../../component-library/Image/AvatarImage';
+import { withTranslation } from '../../hooks/useTranslations';
 import {
   hiddenValue,
   showAmount,
@@ -11,37 +12,48 @@ import {
   getLabelValue,
 } from '../../utils/amount';
 
-const TokenList = ({ tokens, onDetail, hiddenBalance }) => (
+const TokenList = ({ tokens, onDetail, hiddenBalance, t }) => (
   <>
     {tokens ? (
-      <List tokens={tokens} onDetail={onDetail} hiddenBalance={hiddenBalance} />
+      <List
+        tokens={tokens}
+        onDetail={onDetail}
+        hiddenBalance={hiddenBalance}
+        t={t}
+      />
     ) : (
       <GlobalSkeleton type="TokenList" />
     )}
   </>
 );
 
-const List = ({ tokens, onDetail, hiddenBalance }) => (
+const List = ({ tokens, onDetail, hiddenBalance, t }) => (
   <>
-    {tokens.map(t => (
+    {tokens.map(tok => (
       <CardButton
-        key={t.mint}
-        onPress={() => onDetail(t)}
-        icon={<AvatarImage url={t.logo} size={48} />}
-        title={t.name}
-        description={`${hiddenBalance ? hiddenValue : t.uiAmount} ${
-          t.symbol || ''
+        key={tok.mint}
+        onPress={() => onDetail(tok)}
+        icon={<AvatarImage url={tok.logo} size={48} />}
+        // title={tok.name} // MI, vanilla
+        title={
+          t(`token_symbol_names.${tok.symbol}`) ===
+          `token_symbol_names.${tok.symbol}`
+            ? tok.name
+            : t(`token_symbol_names.${tok.symbol}`)
+        } // MI
+        description={`${hiddenBalance ? hiddenValue : tok.uiAmount} ${
+          tok.symbol || ''
         }`}
         actions={[
           <GlobalText key={'amount-action'} type="body2">
-            {hiddenBalance ? hiddenValue : showAmount(t.indexBalance)}
+            {hiddenBalance ? hiddenValue : showAmount(tok.indexBalance)}
           </GlobalText>,
-          t.last24HoursChange && (
+          tok.last24HoursChange && (
             <GlobalText
               key={'perc-action'}
               type="body2"
-              color={getLabelValue(get(t, 'last24HoursChange.perc'))}>
-              {showPercentage(get(t, 'last24HoursChange.perc'))}
+              color={getLabelValue(get(tok, 'last24HoursChange.perc'))}>
+              {showPercentage(get(tok, 'last24HoursChange.perc'))}
             </GlobalText>
           ),
         ].filter(Boolean)}
@@ -50,4 +62,4 @@ const List = ({ tokens, onDetail, hiddenBalance }) => (
   </>
 );
 
-export default TokenList;
+export default withTranslation()(TokenList);

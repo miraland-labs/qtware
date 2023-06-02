@@ -6,15 +6,15 @@ import ChooseDerivable from './components/ChooseDerivable';
 import { useNavigation } from '../../routes/hooks';
 import { withTranslation } from '../../hooks/useTranslations';
 import { ROUTES_MAP } from '../../routes/app-routes';
-import { getSolanaBalance } from 'qtw-wallet-adapter/services/solana/solana-balance-service';
+import { getMiralandBalance } from 'qtw-wallet-adapter/services/miraland/miraland-balance-service';
 
-const getSolBalances = async (activeWallet, derivAccounts) => {
+const getMlnBalances = async (activeWallet, derivAccounts) => {
   const connection = await activeWallet.getConnection();
   const items = {};
 
   for (const { publicKey } of derivAccounts) {
-    const solBalance = await getSolanaBalance(connection, publicKey);
-    items[publicKey.toString()] = solBalance;
+    const mlnBalance = await getMiralandBalance(connection, publicKey);
+    items[publicKey.toString()] = mlnBalance;
   }
 
   return items;
@@ -41,7 +41,7 @@ const DerivedAccountsPage = ({ t }) => {
   }, [activeWallet, selectedEndpoints]);
 
   useEffect(() => {
-    getSolBalances(activeWallet, accounts).then(accBalance => {
+    getMlnBalances(activeWallet, accounts).then(accBalance => {
       setBalances(accBalance);
     });
   }, [activeWallet, accounts]);

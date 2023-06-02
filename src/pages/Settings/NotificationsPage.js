@@ -20,28 +20,28 @@ const NotificationsPage = ({ t }) => {
 
         <CardButton
           title="Nofification 1"
-          description="Lorem ipsum dolor sit amet, consectetur adipiscing elit"
+          description="Do not share your secret"
           actionIcon="ToggleOn"
           onPress={() => {}}
         />
 
         <CardButton
           title="Nofification 2"
-          description="Lorem ipsum dolor sit amet, consectetur adipiscing elit"
+          description="Do not share your secret"
           actionIcon="ToggleOff"
           onPress={() => {}}
         />
 
         <CardButton
           title="Nofification 3"
-          description="Lorem ipsum dolor sit amet, consectetur adipiscing elit"
+          description="Do not share your secret"
           actionIcon="ToggleOn"
           onPress={() => {}}
         />
 
         <CardButton
           title="Nofification 4"
-          description="Lorem ipsum dolor sit amet, consectetur adipiscing elit"
+          description="Do not share your secret"
           actionIcon="ToggleOff"
           onPress={() => {}}
         />

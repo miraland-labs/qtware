@@ -74,7 +74,7 @@ const WelcomePage = ({ t }) => {
 
         <GlobalPadding size="2xl" />
 
-        <GlobalDivider />
+        {/* <GlobalDivider /> */}
 
         <GlobalText type="headline2" center>
           {steps[step].title}

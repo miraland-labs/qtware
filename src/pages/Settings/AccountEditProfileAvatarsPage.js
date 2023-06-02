@@ -1,4 +1,4 @@
-import React, { useContext, useEffect, useState } from 'react';
+import React, { useContext } from 'react';
 
 import { ROUTES_MAP as ROUTES_SETTINGS_MAP } from './routes';
 import { useNavigation, withParams } from '../../routes/hooks';
@@ -23,7 +23,8 @@ const AccountEditProfileAvatarsPage = ({ params, t }) => {
     editWalletAvatar(
       activeWallet.getReceiveAddress(),
       // `http://static.salmonwallet.io/avatar/${id}.png`,
-      `https://www.arcaps.com/shared/qtware/Avatar.png`,
+      // `https://www.arcaps.com/shared/qtware/Avatar.png`,
+      `https://www.arcaps.com/shared/qtware/avatar/${id}.png`,
     );
     navigate(ROUTES_WALLET_MAP.WALLET_OVERVIEW);
   };

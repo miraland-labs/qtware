@@ -4,7 +4,13 @@ import { withTranslation as withTranslationHOC } from 'react-i18next';
 import i18n, { LANGUAGES, resources } from '../translations';
 import storage from '../utils/storage';
 
-const DEFAULT_LANGUAGE = 'en';
+// MI
+// console.log('language: ' + i18n.language); // undefined
+
+// const DEFAULT_LANGUAGE = 'zh'; //MI, vanilla: 'en'
+const usrlangs = navigator.languages;
+console.log('language: ' + usrlangs);
+const DEFAULT_LANGUAGE = usrlangs?.[0].startsWith('zh') ? 'zh' : 'en';
 
 const STORAGE_KEYS = {
   LANGUAGE: 'lang',

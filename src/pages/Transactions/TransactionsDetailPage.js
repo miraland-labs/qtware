@@ -230,7 +230,7 @@ const TransactionsDetailPage = ({ t, params }) => {
           <GlobalText type="body2">
             {moment
               .unix(transactionDetail.timestamp)
-              .format('MMM D, YYYY - h.mm A')}
+              .format('MMM D, YYYY - h:mm A')}
           </GlobalText>
         </View>
 
@@ -325,6 +325,8 @@ const TransactionsDetailPage = ({ t, params }) => {
               `https://solscan.io/tx/${transactionDetail.signature}`,
             )
           }
+          disabled={true}
+          disableElevation
         />
 
         <GlobalPadding />
@@ -420,7 +422,7 @@ const TransactionsDetailPage = ({ t, params }) => {
           <GlobalText type="body2">
             {moment
               .unix(transactionDetail.timestamp)
-              .format('MMM D, YYYY - h.mm A')}
+              .format('MMM D, YYYY - h:mm A')}
           </GlobalText>
         </View>
 
@@ -501,6 +503,8 @@ const TransactionsDetailPage = ({ t, params }) => {
               `https://solscan.io/tx/${transactionDetail.signature}`,
             )
           }
+          disabled={true}
+          disableElevation
         />
 
         <GlobalPadding />
@@ -578,7 +582,7 @@ const TransactionsDetailPage = ({ t, params }) => {
         <GlobalText type="body2">
           {moment
             .unix(transactionDetail.timestamp)
-            .format('MMM D, YYYY - h.mm A')}
+            .format('MMM D, YYYY - h:mm A')}
         </GlobalText>
       </View>
 
@@ -639,6 +643,8 @@ const TransactionsDetailPage = ({ t, params }) => {
             `https://solscan.io/tx/${transactionDetail.signature}`,
           )
         }
+        disabled={true}
+        disableElevation
       />
 
       <GlobalPadding />

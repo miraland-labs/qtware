@@ -5,7 +5,7 @@ import { AppContext } from '../../AppProvider';
 import { useNavigation } from '../../routes/hooks';
 import { withTranslation } from '../../hooks/useTranslations';
 import { cache, CACHE_TYPES } from '../../utils/cache';
-import { ROUTES_MAP as APP_ROUTES_MAP } from '../../routes/app-routes';
+// import { ROUTES_MAP as APP_ROUTES_MAP } from '../../routes/app-routes';
 import { ROUTES_MAP as NFTS_ROUTES_MAP } from './routes';
 // import { getWalletName } from '../../utils/wallet';
 import { isMoreThanOne } from '../../utils/nfts';

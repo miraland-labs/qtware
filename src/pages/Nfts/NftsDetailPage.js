@@ -94,7 +94,8 @@ const NftsDetailPage = ({ params, t }) => {
 
   const getListBtnTitle = () =>
     !listedLoaded ? (
-      'coming soon...'
+      // 'coming soon...'
+      t('nft.list_nft')
     ) : listedInfo ? (
       <>
         {t('nft.delist_nft')}

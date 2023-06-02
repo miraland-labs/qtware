@@ -10,6 +10,7 @@ import { cache, CACHE_TYPES } from '../../utils/cache';
 import {
   getTransactionImage,
   getWalletName,
+  getWalletAvatar,
   TRANSACTION_STATUS,
 } from '../../utils/wallet';
 import { getMediaRemoteUrl } from '../../utils/media';
@@ -230,6 +231,7 @@ const NftsSendPage = ({ params, t }) => {
                       title={getWalletName(wallet.address, config)}
                       address={wallet.address}
                       chain={wallet.chain}
+                      image={getWalletAvatar(wallet.address, config)}
                       imageSize="md"
                       onPress={() => setInputAddress(wallet.address)}
                       buttonStyle={globalStyles.addressBookItem}
@@ -347,7 +349,7 @@ const NftsSendPage = ({ params, t }) => {
               {fee && !addressEmpty && (
                 <View style={globalStyles.inlineWell}>
                   <GlobalText type="caption" color="tertiary">
-                    Network Fee
+                    {t(`token.send.network_fee`)}
                   </GlobalText>
                   <GlobalText type="body2">
                     {fee / TOKEN_DECIMALS.MIRALAND} MLN
@@ -434,6 +436,8 @@ const NftsSendPage = ({ params, t }) => {
                   wide
                   title={t(`token.send.goto_explorer`)}
                   onPress={openTransaction}
+                  disabled={true}
+                  disableElevation
                   style={globalStyles.button}
                   touchableStyles={globalStyles.buttonTouchable}
                 />

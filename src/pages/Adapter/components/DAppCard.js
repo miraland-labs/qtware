@@ -1,7 +1,7 @@
 import React from 'react';
 import { StyleSheet, View } from 'react-native';
 import GlobalImage from '../../../component-library/Global/GlobalImage';
-import GlobalPadding from '../../../component-library/Global/GlobalPadding';
+// import GlobalPadding from '../../../component-library/Global/GlobalPadding';
 import GlobalText from '../../../component-library/Global/GlobalText';
 
 import theme from '../../../component-library/Global/theme';

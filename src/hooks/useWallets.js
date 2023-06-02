@@ -176,14 +176,25 @@ const useWallets = () => {
     });
   }, [unlockWalletsAt]);
 
+  // const getRandomAvatar = () => {
+  //   const rnd = Math.floor(Math.random() * 24) + 1;
+  //   const index = rnd.toLocaleString('en-US', {
+  //     minimumIntegerDigits: 2,
+  //     useGrouping: false,
+  //   });
+  //   // return `http://static.salmonwallet.io/avatar/${index}.png`;
+  //   return `https://www.arcaps.com/shared/qtware/Avatar.png`;
+  // };
+
   const getRandomAvatar = () => {
-    const rnd = Math.floor(Math.random() * 24) + 1;
+    const rnd = Math.floor(Math.random() * 50);
+    // return `http://static.salmonwallet.io/avatar/${index}.png`;
     const index = rnd.toLocaleString('en-US', {
       minimumIntegerDigits: 2,
       useGrouping: false,
     });
-    // return `http://static.salmonwallet.io/avatar/${index}.png`;
-    return `https://www.arcaps.com/shared/qtware/Avatar.png`;
+    // console.log('avatar: ', `www.arcaps.com/shared/qtware/avatar/${index}.png`);
+    return `https://www.arcaps.com/shared/qtware/avatar/${index}.png`;
   };
 
   const addWallet = async (account, password, chain) => {

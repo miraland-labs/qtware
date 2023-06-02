@@ -5,7 +5,7 @@ import AccountEditPage from './AccountEditPage';
 import AccountEditProfilePage from './AccountEditProfilePage';
 import AccountEditNamePage from './AccountEditNamePage';
 import AccountEditAddressPage from './AccountEditAddressPage';
-import AccountEditNotificationsPage from './AccountEditNotificationsPage';
+// import AccountEditNotificationsPage from './AccountEditNotificationsPage';
 import AccountEditSeedPhrasePage from './AccountEditSeedPhrasePage';
 
 import AddressBookPage from './AddressBookPage';
@@ -15,7 +15,7 @@ import AddressBookEditPage from './AddressBookEditPage';
 import ChangeNetworkPage from './ChangeNetworkPage';
 import ChangeLanguagePage from './ChangeLanguagePage';
 import SecurityPage from './SecurityPage';
-import NotificationsPage from './NotificationsPage';
+// import NotificationsPage from './NotificationsPage';
 import TrustedAppsPage from './TrustedAppsPage';
 import HelpSupportPage from './HelpSupportPage';
 import AccountEditProfileNftsPage from './AccountEditProfileNftsPage';

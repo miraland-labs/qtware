@@ -1,15 +1,18 @@
 import WalletOverview from './WalletOverviewPage';
-import SwapPage from './SwapPage';
+// import SwapPage from './SwapPage';
 import TransactionsPage from '../Transactions/TransactionsPage';
 import SettingsSection from '../Settings';
 import NftsSection from '../Nfts';
 
 import IconWallet from '../../assets/images/IconWallet.png';
 import IconNFT from '../../assets/images/IconNFT.png';
-import IconSwap from '../../assets/images/IconSwap.png';
+// import IconSwap from '../../assets/images/IconSwap.png';
 import IconBalance from '../../assets/images/IconBalance.png';
 import IconSettings from '../../assets/images/IconSettings.png';
 import { getDefaultRouteKey, getRoutesWithParent } from '../../routes/utils';
+
+// import { withParams } from '../../routes/hooks'; // MI
+// import { withTranslation } from '../../hooks/useTranslations'; // MI
 
 export const ROUTES_MAP = {
   WALLET_OVERVIEW: 'WALLET_OVERVIEW',
@@ -74,4 +77,6 @@ const routes = [
   ...getRoutesWithParent(SETTINGS_ROUTES, ROUTES_MAP.WALLET_SETTINGS),
 ];
 
+// MI
 export default routes;
+// export default withParams(withTranslation()(routes));

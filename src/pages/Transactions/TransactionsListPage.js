@@ -105,12 +105,12 @@ const TransactionsListPage = ({ t }) => {
       ? (lastTransDate = null)
       : (lastTransDate = moment
           .unix(recTrans[i - 1].timestamp)
-          .format('MMM D, YYYY'));
+          .format('MMM D, YYYY')); // MI, vanilla: format('MMM D, YYYY')
     const thisTransDate = moment
       .unix(recTrans[i].timestamp)
-      .format('MMM D, YYYY');
-    const yesterday = moment().subtract(1, 'days').format('MMM D, YYYY');
-    const today = moment().format('MMM D, YYYY');
+      .format('MMM D, YYYY'); // MI, vanilla: format('MMM D, YYYY')
+    const yesterday = moment().subtract(1, 'days').format('MMM D, YYYY'); // MI, vanilla: format('MMM D, YYYY')
+    const today = moment().format('MMM D, YYYY'); // MI, vanilla: format('MMM D, YYYY')
     if (thisTransDate !== lastTransDate) {
       return thisTransDate === today
         ? t('transactions.today')
@@ -428,7 +428,7 @@ const TransactionsListPage = ({ t }) => {
             {showLoadMore() ? (
               <GlobalButton
                 type="text"
-                title="Load more"
+                title={t('transactions.load_more')}
                 onPress={onLoadMore}
               />
             ) : null}

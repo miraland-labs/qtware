@@ -86,7 +86,8 @@ export const getWalletAvatar = (address, config) =>
     config,
     `${address}.avatar`,
     // 'http://static.salmonwallet.io/avatar/00.png',
-    'https://www.arcaps.com/shared/qtware/Avatar.png',
+    // 'https://www.arcaps.com/shared/qtware/Avatar.png',
+    'https://www.arcaps.com/shared/qtware/avatar/00.png',
   );
 
 export const getWalletChain = wallet => {

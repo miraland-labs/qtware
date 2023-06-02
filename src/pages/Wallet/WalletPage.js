@@ -7,16 +7,20 @@ import { ROUTES_TYPES } from '../../routes/constants';
 
 import GlobalTabBarLayout from '../../component-library/Global/GlobalTabBarLayout';
 
-const WalletPage = () => {
+import { withParams } from '../../routes/hooks'; // MI
+import { withTranslation } from '../../hooks/useTranslations'; // MI
+
+const WalletPage = ({ t }) => {
   const navigate = useNavigation();
   // const [{ activeWallet }] = useContext(AppContext);
 
   return (
     <GlobalTabBarLayout
+      t={t}
       tabs={routes
         .filter(r => !!r.icon)
         .map(r => ({
-          title: r.name,
+          title: t(`routes.${r.name}`), // MI, vanilla: title: r.name
           onClick: () => navigate(r.key),
           icon: r.icon,
           route: r.route,
@@ -26,4 +30,6 @@ const WalletPage = () => {
   );
 };
 
-export default WalletPage;
+// MI
+// export default WalletPage;
+export default withParams(withTranslation()(WalletPage));

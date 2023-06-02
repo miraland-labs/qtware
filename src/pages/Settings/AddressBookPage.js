@@ -76,8 +76,7 @@ const AddressBookPage = ({ t }) => {
               action={() => handleRemoveWallet(toRemove)}
               text={
                 <GlobalText center type="body1">
-                  Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed
-                  do eiusmod tempor incididunt.
+                  Do not share your secret
                 </GlobalText>
               }
             />
